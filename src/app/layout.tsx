@@ -22,6 +22,7 @@ import { ModeProvider } from "@/context/ModeContext";
 import ModeSwitcher from "@/components/ModeSwitcher";
 import EasterEggs from "@/components/EasterEggs";
 import MiniAIAssistant from "@/components/MiniAIAssistant";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export default function RootLayout({
   children,
@@ -39,6 +40,7 @@ export default function RootLayout({
           <ModeSwitcher />
           <EasterEggs />
           <MiniAIAssistant />
+          <ScrollToTop />
         </ModeProvider>
       </body>
     </html>
