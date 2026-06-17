@@ -1,14 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, GitBranch, Network, ArrowUpRight, Code2, Globe } from "lucide-react";
+import { Mail, GitBranch, Network, ArrowUpRight, Code2, Globe, FileText } from "lucide-react";
 
 const links = [
   {
-    name: "Portfolio",
-    url: "https://sarthak.foo/",
-    icon: <Globe className="w-5 h-5" />,
-    handle: "sarthak.foo"
+    name: "Resume",
+    url: "/Sarthak_Verma_Resume.pdf",
+    icon: <FileText className="w-5 h-5" />,
+    handle: "View PDF"
   },
   {
     name: "GitHub",
