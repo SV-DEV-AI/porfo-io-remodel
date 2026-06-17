@@ -31,7 +31,7 @@ export default function Experience() {
               </div>
               <div>
                 <h3 className="text-2xl font-semibold text-white tracking-tight mb-1">Junior Developer Intern</h3>
-                <h4 className="text-lg text-muted-foreground font-light">DS Enterprises</h4>
+                <h4 className="text-lg text-muted-foreground font-light">Shineora Arts and Jewels Pvt Ltd</h4>
               </div>
             </div>
             
