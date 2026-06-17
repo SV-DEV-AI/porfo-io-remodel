@@ -1,14 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, GitBranch, Network, ArrowUpRight } from "lucide-react";
+import { Mail, GitBranch, Network, ArrowUpRight, Code2, Globe } from "lucide-react";
 
 const links = [
   {
-    name: "Email",
-    url: "mailto:sarthakv2005@gmail.com", // Assuming based on username, update if needed
-    icon: <Mail className="w-5 h-5" />,
-    handle: "sarthak.verma"
+    name: "Portfolio",
+    url: "https://sarthak.foo/",
+    icon: <Globe className="w-5 h-5" />,
+    handle: "sarthak.foo"
   },
   {
     name: "GitHub",
@@ -21,6 +21,12 @@ const links = [
     url: "https://www.linkedin.com/in/sarthak-verma-1a03a52b5/",
     icon: <Network className="w-5 h-5" />,
     handle: "Sarthak Verma"
+  },
+  {
+    name: "LeetCode",
+    url: "https://leetcode.com/u/sarthakv2005/",
+    icon: <Code2 className="w-5 h-5" />,
+    handle: "sarthakv2005"
   }
 ];
 

@@ -5,29 +5,24 @@ import { useRef } from "react";
 
 const timelineData = [
   {
-    year: "2019",
-    title: "The Beginning",
-    description: "Wrote my first lines of code and discovered a passion for building things from scratch. Started exploring the fundamentals of computer science.",
+    year: "Phase I",
+    title: "Student Portal",
+    description: "Learning web development fundamentals and building the foundation of my technical journey.",
   },
   {
-    year: "2020–2023",
-    title: "Learning & Exploration",
-    description: "Dived deep into algorithms, data structures, and web development. Started formal education in B.Tech Computer Science and honed my technical foundation.",
+    year: "Phase II",
+    title: "Shineora",
+    description: "Building a production e-commerce platform. Focused on architecture, UX, and deploying real-world solutions.",
   },
   {
-    year: "2024",
-    title: "Building Real Products",
-    description: "Shifted focus from learning to building. Developed Shineora, a full-fledged e-commerce platform, gaining hands-on experience in production environments.",
+    year: "Phase III",
+    title: "Elize",
+    description: "Exploring AI and workflow automation. Bridging the gap between raw intelligence and user utility.",
   },
   {
-    year: "2025",
-    title: "AI & Automation",
-    description: "Started bridging the gap between software and intelligence. Built Elize, an AI-powered academic assistant, mastering workflow automation and LLM integrations.",
-  },
-  {
-    year: "Present",
-    title: "Creating Intelligent Systems",
-    description: "Currently focusing on scalable architectures, AI agents, and product-grade experiences that solve real-world problems.",
+    year: "Phase IV",
+    title: "The Future",
+    description: "Building intelligent software systems. Continuously pushing the boundaries of product engineering and automation.",
   },
 ];
 

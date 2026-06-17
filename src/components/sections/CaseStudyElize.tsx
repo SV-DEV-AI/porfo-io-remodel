@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Bot, Network, MessageSquare, Cpu, ExternalLink } from "lucide-react";
+import { Bot, Network, MessageSquare, Cpu, ArrowUpRight } from "lucide-react";
 
 export default function CaseStudyElize() {
   const containerRef = useRef(null);
@@ -28,9 +28,13 @@ export default function CaseStudyElize() {
         <div className="text-center max-w-3xl mx-auto mb-24 md:mb-32">
           <span className="text-blue-400 font-mono tracking-[0.3em] text-xs uppercase mb-6 block">Case Study 02</span>
           <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/50">Elize AI</h2>
-          <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed mb-8">
             An intelligent academic assistant. Seamlessly connecting Telegram, n8n workflows, and Large Language Models.
           </p>
+          <a href="https://elize-remodel.vercel.app/chat" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 border border-blue-500/20 transition-colors text-sm font-semibold">
+            <span>Interact with Elize</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
         </div>
 
         {/* Interactive Architecture Flow */}

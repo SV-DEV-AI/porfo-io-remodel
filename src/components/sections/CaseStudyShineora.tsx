@@ -2,7 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { GitBranch, ShoppingBag } from "lucide-react";
+import { GitBranch, ShoppingBag, ArrowUpRight } from "lucide-react";
 
 export default function CaseStudyShineora() {
   const containerRef = useRef(null);
@@ -27,6 +27,10 @@ export default function CaseStudyShineora() {
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
+            <a href="https://www.shineora.in/" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-8 py-4 rounded-full bg-white text-black hover:bg-white/90 transition-colors text-sm font-semibold">
+              <span>Visit Platform</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
             <a href="https://github.com/SV-DEV-AI/shineora.in" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-6 py-4 rounded-full border border-border/50 bg-[#1A1A1A] hover:bg-[#222222] transition-colors text-sm font-medium">
               <GitBranch className="w-4 h-4" />
               <span>Source</span>
@@ -44,7 +48,7 @@ export default function CaseStudyShineora() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-border/20 py-16 mb-32">
           {[
-            { label: "Role", value: "Full-Stack Engineer" },
+            { label: "Role", value: "Lead Developer" },
             { label: "Timeline", value: "5 Months" },
             { label: "Stack", value: "Next.js, TS, Tailwind" },
             { label: "Status", value: "Production" },
@@ -68,7 +72,7 @@ export default function CaseStudyShineora() {
             <div>
               <h3 className="text-4xl font-semibold mb-8 text-white tracking-tight">The Solution</h3>
               <p className="text-muted-foreground text-xl leading-relaxed font-light">
-                I engineered a custom storefront from the ground up using React and modern CSS architectures. By integrating headless commerce APIs, I decoupled the frontend from the backend, ensuring sub-second page loads and seamless, app-like transitions between categories.
+                I engineered a custom storefront from the ground up, navigating complex client requirements. By integrating headless commerce APIs, I decoupled the frontend from the backend, ensuring sub-second page loads, exceptional mobile optimization, and seamless, app-like transitions between categories.
               </p>
             </div>
             <div>
@@ -82,13 +86,13 @@ export default function CaseStudyShineora() {
           <div className="space-y-12">
             <div className="aspect-square bg-[#1A1A1A] rounded-[2.5rem] border border-border/10 p-12 flex flex-col justify-end relative overflow-hidden group">
                <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[120px] rounded-full transition-transform duration-700 group-hover:scale-110"></div>
-               <h4 className="text-3xl font-medium mb-4 text-white">Modern Architecture</h4>
-               <p className="text-muted-foreground text-lg font-light leading-relaxed">Built on a cutting-edge stack for maximum performance and edge computing capabilities.</p>
+               <h4 className="text-3xl font-medium mb-4 text-white">SEO & Deployment</h4>
+               <p className="text-muted-foreground text-lg font-light leading-relaxed">Built on a cutting-edge stack for maximum performance, global edge deployment, and aggressive search engine optimization.</p>
             </div>
             <div className="aspect-[4/3] bg-[#0B0B0B] rounded-[2.5rem] border border-border/10 p-12 flex flex-col justify-end relative overflow-hidden group">
                <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 blur-[120px] rounded-full transition-transform duration-700 group-hover:scale-110"></div>
-               <h4 className="text-3xl font-medium mb-4 text-white">Flawless UI</h4>
-               <p className="text-muted-foreground text-lg font-light leading-relaxed">Utilized Tailwind CSS for fluid, perfectly spaced layouts that feel native and expensive.</p>
+               <h4 className="text-3xl font-medium mb-4 text-white">UX & Mobile First</h4>
+               <p className="text-muted-foreground text-lg font-light leading-relaxed">Utilized fluid, perfectly spaced layouts that feel native and expensive across all device viewports.</p>
             </div>
           </div>
         </div>
