@@ -68,11 +68,11 @@ export default function SkillsInteractive() {
   const [activeId, setActiveId] = useState<string | null>(skillsData[0].id);
 
   return (
-    <section className="w-full bg-[#0B0B0B] text-foreground py-32 md:py-48 relative overflow-hidden">
+    <section className="w-full bg-[#0B0B0B] text-foreground py-24 md:py-32 relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10">
         
-        <div className="text-center mb-24">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">Technical Arsenal</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">Technical Arsenal</h2>
           <p className="text-muted-foreground text-lg md:text-xl font-light">A comprehensive toolkit for modern product development.</p>
         </div>
 
@@ -87,7 +87,7 @@ export default function SkillsInteractive() {
               >
                 <button
                   onClick={() => setActiveId(isActive ? null : category.id)}
-                  className="w-full flex items-center justify-between p-6 md:p-10 text-left focus:outline-none"
+                  className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none"
                 >
                   <div className="flex items-center gap-6">
                     <div className={`p-4 rounded-2xl transition-colors duration-500 ${isActive ? 'bg-primary/10 text-primary' : 'bg-white/5 text-muted-foreground'}`}>
@@ -116,7 +116,7 @@ export default function SkillsInteractive() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.5, ease: "easeOut" as const }}
                     >
-                      <div className="px-6 md:px-10 pb-10 pt-2 flex flex-col md:flex-row gap-8 md:gap-16">
+                      <div className="px-6 md:px-8 pb-8 pt-2 flex flex-col md:flex-row gap-8 md:gap-16">
                         <div className="md:w-1/3">
                            <p className="text-muted-foreground font-light leading-relaxed">{category.description}</p>
                         </div>

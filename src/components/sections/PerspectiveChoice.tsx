@@ -38,10 +38,10 @@ export default function PerspectiveChoice() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   return (
-    <section className="w-full bg-background text-foreground py-32 md:py-48 relative overflow-hidden">
+    <section className="w-full bg-background text-foreground py-24 md:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="text-center mb-24">
-           <h2 className="text-4xl md:text-7xl font-bold tracking-tighter text-white mb-6">What would you like to explore?</h2>
+        <div className="text-center mb-16">
+           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-6">What would you like to explore?</h2>
            <p className="text-muted-foreground text-xl font-light">Choose a perspective to understand how I approach problems.</p>
         </div>
 
@@ -51,7 +51,7 @@ export default function PerspectiveChoice() {
               layoutId={`card-container-${item.id}`}
               key={item.id}
               onClick={() => setSelectedId(item.id)}
-              className="bg-[#111] hover:bg-[#151515] border border-white/5 hover:border-white/20 rounded-[2rem] p-10 md:p-14 cursor-pointer transition-colors group flex flex-col items-center text-center relative overflow-hidden h-[400px] md:h-[500px]"
+              className="bg-[#111] hover:bg-[#151515] border border-white/5 hover:border-white/20 rounded-[2rem] p-8 md:p-10 cursor-pointer transition-colors group flex flex-col items-center text-center relative overflow-hidden h-[400px] md:h-[450px]"
             >
               <div className={`absolute inset-0 bg-gradient-to-b ${item.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
               
@@ -85,7 +85,7 @@ export default function PerspectiveChoice() {
                 <motion.div
                   layoutId={`card-container-${item.id}`}
                   key={item.id}
-                  className="bg-[#111] border border-white/10 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[3rem] p-8 md:p-16 relative flex flex-col shadow-2xl"
+                  className="bg-[#111] border border-white/10 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2rem] md:rounded-[3rem] p-8 md:p-12 relative flex flex-col shadow-2xl"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <button 

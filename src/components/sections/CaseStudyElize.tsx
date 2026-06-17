@@ -17,7 +17,7 @@ export default function CaseStudyElize() {
   const [activeNode, setActiveNode] = useState<string | null>(null);
 
   return (
-    <section ref={containerRef} className="w-full bg-[#050505] text-white py-32 md:py-48 relative overflow-hidden border-t border-white/5">
+    <section ref={containerRef} className="w-full bg-[#050505] text-white py-24 md:py-32 relative overflow-hidden border-t border-white/5">
       {/* Background Tech Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]"></div>
       
@@ -27,20 +27,20 @@ export default function CaseStudyElize() {
       <motion.div style={{ opacity, y }} className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-24 md:mb-32">
+        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
           <span className="text-blue-400 font-mono tracking-[0.3em] text-xs uppercase mb-6 block">Case Study 02</span>
-          <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/50">Elize AI</h2>
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/50">Elize AI</h2>
           <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed mb-8">
             An intelligent academic assistant. Seamlessly connecting Telegram, n8n workflows, and Large Language Models.
           </p>
-          <a href="https://elize-remodel.vercel.app/chat" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 border border-blue-500/20 transition-colors text-sm font-semibold">
+          <a href="https://elize-remodel.vercel.app/chat" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 border border-blue-500/20 transition-colors text-sm font-semibold">
             <span>Interact with Elize</span>
             <ArrowUpRight className="w-4 h-4" />
           </a>
         </div>
 
         {/* Interactive Architecture Flow */}
-        <div className="w-full bg-[#0A0A0A] border border-white/10 rounded-[3rem] p-8 md:p-16 mb-32 relative overflow-hidden shadow-2xl shadow-blue-900/10">
+        <div className="w-full bg-[#0A0A0A] border border-white/10 rounded-[3rem] p-8 md:p-12 mb-24 relative overflow-hidden shadow-2xl shadow-blue-900/10">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent pointer-events-none"></div>
           
           <h3 className="text-2xl font-semibold mb-16 text-center tracking-tight">System Architecture</h3>
@@ -80,15 +80,15 @@ export default function CaseStudyElize() {
 
         {/* Deep Dive Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-[#111] border border-white/5 p-10 rounded-3xl space-y-4 hover:border-white/20 transition-colors">
+          <div className="bg-[#111] border border-white/5 p-8 rounded-3xl space-y-4 hover:border-white/20 transition-colors">
             <h4 className="text-xl font-medium text-white">The Problem</h4>
             <p className="text-muted-foreground font-light leading-relaxed">Students needed instant, personalized academic support without navigating complex interfaces or waiting for human tutors.</p>
           </div>
-          <div className="bg-[#111] border border-white/5 p-10 rounded-3xl space-y-4 hover:border-white/20 transition-colors">
+          <div className="bg-[#111] border border-white/5 p-8 rounded-3xl space-y-4 hover:border-white/20 transition-colors">
             <h4 className="text-xl font-medium text-white">The Automation</h4>
             <p className="text-muted-foreground font-light leading-relaxed">Built scalable webhook integrations via n8n to route messages seamlessly between the Telegram Bot API and AI models.</p>
           </div>
-          <div className="bg-[#111] border border-white/5 p-10 rounded-3xl space-y-4 hover:border-white/20 transition-colors">
+          <div className="bg-[#111] border border-white/5 p-8 rounded-3xl space-y-4 hover:border-white/20 transition-colors">
             <h4 className="text-xl font-medium text-white">The Outcome</h4>
             <p className="text-muted-foreground font-light leading-relaxed">A lightning-fast conversational agent providing 24/7 educational assistance, reducing query resolution time to seconds.</p>
           </div>

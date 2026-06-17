@@ -66,16 +66,16 @@ export default function StoryTimeline() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   return (
-    <section ref={containerRef} className="relative w-full py-32 md:py-64 bg-background overflow-hidden">
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-32">
+    <section ref={containerRef} className="relative w-full py-24 md:py-32 bg-background overflow-hidden">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="text-center mb-24">
           <span className="text-primary font-mono tracking-widest text-xs uppercase mb-6 block">Origin Story</span>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-4">The Journey</h2>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-6">The Journey</h2>
           <p className="text-muted-foreground text-lg md:text-xl font-light">From first lines of code to intelligent systems.</p>
         </div>
 
         {/* Animated Vertical Line */}
-        <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[1px] bg-border/30 -translate-x-1/2 mt-48 mb-32 z-0">
+        <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[1px] bg-border/30 -translate-x-1/2 mt-40 mb-24 z-0">
           <motion.div
             className="absolute top-0 left-0 w-full bg-gradient-to-b from-primary via-blue-500 to-purple-500"
             style={{ height: lineHeight }}
@@ -139,7 +139,7 @@ function TimelineItem({ item, isEven, isExpanded, onClick }: { item: TimelineIte
         <motion.div 
           layout
           onClick={onClick}
-          className="bg-[#111] border border-white/5 hover:border-white/20 p-6 md:p-8 rounded-3xl cursor-pointer w-full transition-colors relative overflow-hidden"
+          className="bg-[#111] border border-white/5 hover:border-white/20 p-8 md:p-10 rounded-3xl cursor-pointer w-full transition-colors relative overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)]"
         >
           {/* Hover Gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

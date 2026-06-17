@@ -76,7 +76,7 @@ function NetworkIcon({ className }: { className?: string }) {
 
 export default function Certifications() {
   return (
-    <section className="w-full bg-[#080808] text-foreground py-32 md:py-48 relative overflow-hidden border-t border-white/5">
+    <section className="w-full bg-[#080808] text-foreground py-24 md:py-32 relative overflow-hidden border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         <div className="flex flex-col md:flex-row gap-16 md:gap-24">
@@ -84,7 +84,7 @@ export default function Certifications() {
           <div className="md:w-1/3">
             <div className="sticky top-32">
               <span className="text-primary font-mono tracking-widest text-xs uppercase mb-6 block">Verified Credentials</span>
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6">Continuous<br />Learning.</h2>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">Continuous<br />Learning.</h2>
               <p className="text-muted-foreground text-lg font-light leading-relaxed mb-12">
                 Validating skills through industry-recognized programs and real-world corporate simulations.
               </p>

@@ -35,7 +35,7 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-3 mb-8 text-xs md:text-sm font-medium text-muted-foreground uppercase tracking-widest">
+        <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-3 mb-6 text-xs md:text-sm font-medium text-muted-foreground uppercase tracking-widest">
           <span className="px-4 py-1.5 rounded-full border border-border/50 bg-secondary/30 backdrop-blur-md">Full-Stack Developer</span>
           <span className="px-4 py-1.5 rounded-full border border-border/50 bg-secondary/30 backdrop-blur-md">AI Builder</span>
           <span className="px-4 py-1.5 rounded-full border border-border/50 bg-secondary/30 backdrop-blur-md">Problem Solver</span>
@@ -43,14 +43,14 @@ export default function Hero() {
 
         <motion.h1
           variants={itemVariants}
-          className="text-5xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-6 text-foreground"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 text-foreground"
         >
           Sarthak Verma
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
-          className="max-w-2xl text-base md:text-2xl text-muted-foreground font-light leading-relaxed"
+          className="max-w-3xl text-base md:text-xl lg:text-2xl text-muted-foreground font-light leading-relaxed"
         >
           Building digital experiences, automation systems, and AI-powered products.
         </motion.p>

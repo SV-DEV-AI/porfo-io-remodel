@@ -32,20 +32,20 @@ const links = [
 
 export default function Contact() {
   return (
-    <section className="w-full bg-[#0B0B0B] text-foreground py-32 md:py-64 relative border-t border-white/5 overflow-hidden">
+    <section className="w-full bg-[#0B0B0B] text-foreground py-32 md:py-48 relative border-t border-white/5 overflow-hidden">
       {/* Background elegant gradient */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary/10 blur-[200px] rounded-[100%] pointer-events-none translate-y-1/2" />
 
-      <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center text-center">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center text-center">
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" as const }}
           viewport={{ once: true }}
-          className="mb-24"
+          className="mb-16"
         >
-          <h2 className="text-5xl md:text-8xl font-bold tracking-tighter text-white mb-8">
+          <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6">
             Let&apos;s build something <br className="hidden md:block" /> <span className="text-primary italic font-serif tracking-normal">meaningful.</span>
           </h2>
           <p className="text-muted-foreground text-xl md:text-2xl font-light">
@@ -53,7 +53,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="flex flex-col md:flex-row gap-6 w-full justify-center">
+        <div className="flex flex-col md:flex-row flex-wrap gap-6 w-full justify-center">
           {links.map((link, i) => (
             <motion.a
               key={link.name}
