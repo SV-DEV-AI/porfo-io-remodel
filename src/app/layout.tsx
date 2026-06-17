@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   description: "Portfolio of Sarthak Verma. Building digital experiences, automation systems, and AI-powered products.",
 };
 
+import { ModeProvider } from "@/context/ModeContext";
+import ModeSwitcher from "@/components/ModeSwitcher";
+import EasterEggs from "@/components/EasterEggs";
+import MiniAIAssistant from "@/components/MiniAIAssistant";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,8 +33,13 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
-      <body className="min-h-full flex flex-col">
-        <SmoothScrolling>{children}</SmoothScrolling>
+      <body className="min-h-full flex flex-col relative pb-24">
+        <ModeProvider>
+          <SmoothScrolling>{children}</SmoothScrolling>
+          <ModeSwitcher />
+          <EasterEggs />
+          <MiniAIAssistant />
+        </ModeProvider>
       </body>
     </html>
   );

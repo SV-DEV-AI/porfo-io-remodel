@@ -1,39 +1,65 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Cloud, Cpu, Code, Briefcase, ChevronRight } from "lucide-react";
+import { Award, Cloud, Cpu, Code, Briefcase } from "lucide-react";
 
-const credentials = [
+const allCredentials = [
   {
-    title: "Generative AI: Prompt Engineering Basics",
+    category: "AI",
+    title: "Generative AI: Prompt Engineering",
     issuer: "IBM",
-    icon: <Cpu className="w-8 h-8 md:w-10 md:h-10 text-blue-400" />,
-    type: "Certification",
+    date: "2024",
+    icon: <Cpu className="w-8 h-8 text-blue-400" />,
+    skillsGained: ["Prompt Design", "LLM Context Windows", "AI Workflows"]
   },
   {
-    title: "Getting Started with Data Analytics",
+    category: "Cloud",
+    title: "Data Analytics on AWS",
     issuer: "AWS",
-    icon: <Cloud className="w-8 h-8 md:w-10 md:h-10 text-amber-500" />,
-    type: "Certification",
+    date: "2023",
+    icon: <Cloud className="w-8 h-8 text-amber-500" />,
+    skillsGained: ["Data Pipelines", "Cloud Architecture", "AWS Services"]
   },
   {
+    category: "Networking",
     title: "Introduction to Networking",
     issuer: "NVIDIA",
-    icon: <NetworkIcon className="w-8 h-8 md:w-10 md:h-10 text-green-500" />,
-    type: "Certification",
+    date: "2023",
+    icon: <NetworkIcon className="w-8 h-8 text-green-500" />,
+    skillsGained: ["Network Topology", "Protocols", "Edge Computing"]
   },
   {
+    category: "Programming",
     title: "Java (Basic)",
     issuer: "HackerRank",
-    icon: <Code className="w-8 h-8 md:w-10 md:h-10 text-green-400" />,
-    type: "Certification",
+    date: "2022",
+    icon: <Code className="w-8 h-8 text-green-400" />,
+    skillsGained: ["OOP", "Data Structures", "Algorithms"]
   },
-];
-
-const simulations = [
-  { company: "Tata", role: "GenAI Simulation" },
-  { company: "British Airways", role: "Software Engineering" },
-  { company: "Siemens Mobility", role: "Digital Engineering" },
+  {
+    category: "Job Simulations",
+    title: "GenAI Simulation",
+    issuer: "Tata",
+    date: "2024",
+    icon: <Briefcase className="w-8 h-8 text-purple-400" />,
+    skillsGained: ["Enterprise AI", "Solution Architecture"]
+  },
+  {
+    category: "Job Simulations",
+    title: "Software Engineering",
+    issuer: "British Airways",
+    date: "2024",
+    icon: <Briefcase className="w-8 h-8 text-purple-400" />,
+    skillsGained: ["Web Scraping", "Python", "Data Modeling"]
+  },
+  {
+    category: "Job Simulations",
+    title: "Digital Engineering",
+    issuer: "Siemens Mobility",
+    date: "2024",
+    icon: <Briefcase className="w-8 h-8 text-purple-400" />,
+    skillsGained: ["Agile", "Project Management", "IoT"]
+  }
 ];
 
 function NetworkIcon({ className }: { className?: string }) {
@@ -65,59 +91,47 @@ export default function Certifications() {
             </div>
           </div>
 
-          <div className="md:w-2/3 space-y-16">
-            
-            {/* Certifications Grid */}
-            <div className="space-y-8">
-               <h3 className="text-2xl font-semibold text-white tracking-tight flex items-center gap-3">
-                 <Award className="w-6 h-6 text-primary" />
-                 Professional Certifications
-               </h3>
-               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                 {credentials.map((cred, i) => (
-                   <motion.div 
-                     initial={{ opacity: 0, y: 20 }}
-                     whileInView={{ opacity: 1, y: 0 }}
-                     transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" as const }}
-                     viewport={{ once: true }}
-                     key={cred.title} 
-                     className="bg-[#111] p-8 rounded-3xl border border-white/5 hover:border-white/20 transition-all duration-300 group relative overflow-hidden"
-                   >
-                     <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-500"></div>
-                     <div className="mb-8">{cred.icon}</div>
-                     <span className="text-muted-foreground text-xs font-mono uppercase tracking-widest block mb-2">{cred.issuer}</span>
-                     <h4 className="text-lg font-medium text-white leading-snug">{cred.title}</h4>
-                   </motion.div>
-                 ))}
-               </div>
-            </div>
-
-            {/* Forage Simulations */}
-            <div className="space-y-8 pt-8 border-t border-white/5">
-               <h3 className="text-2xl font-semibold text-white tracking-tight flex items-center gap-3">
-                 <Briefcase className="w-6 h-6 text-primary" />
-                 Forage Corporate Simulations
-               </h3>
-               <div className="flex flex-col gap-3">
-                 {simulations.map((sim, i) => (
-                   <motion.div 
-                     initial={{ opacity: 0, x: -20 }}
-                     whileInView={{ opacity: 1, x: 0 }}
-                     transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" as const }}
-                     viewport={{ once: true }}
-                     key={sim.company} 
-                     className="flex items-center justify-between p-6 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors group"
-                   >
-                     <div>
-                       <h4 className="text-white font-medium text-lg">{sim.company}</h4>
-                       <span className="text-muted-foreground text-sm font-light">{sim.role}</span>
+          <div className="md:w-2/3">
+             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+               {allCredentials.map((cred, i) => (
+                 <motion.div 
+                   initial={{ opacity: 0, y: 20 }}
+                   whileInView={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+                   viewport={{ once: true }}
+                   key={cred.title + cred.issuer} 
+                   className="bg-[#111] p-8 rounded-3xl border border-white/5 hover:border-white/20 transition-all duration-500 group relative overflow-hidden flex flex-col h-[280px]"
+                 >
+                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-500"></div>
+                   
+                   <div className="flex justify-between items-start mb-auto">
+                     <div className="p-3 bg-white/5 rounded-2xl">
+                       {cred.icon}
                      </div>
-                     <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-white transition-colors group-hover:translate-x-1" />
-                   </motion.div>
-                 ))}
-               </div>
-            </div>
+                     <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest bg-white/5 px-3 py-1 rounded-full">
+                       {cred.category}
+                     </span>
+                   </div>
 
+                   <div className="transform group-hover:-translate-y-12 transition-transform duration-500 ease-out">
+                     <span className="text-primary text-xs font-mono uppercase tracking-widest block mb-2">{cred.issuer} • {cred.date}</span>
+                     <h4 className="text-xl font-medium text-white leading-snug">{cred.title}</h4>
+                   </div>
+
+                   {/* Hover Reveal Content */}
+                   <div className="absolute bottom-8 left-8 right-8 opacity-0 group-hover:opacity-100 translate-y-8 group-hover:translate-y-0 transition-all duration-500 ease-out delay-100">
+                     <div className="pt-4 border-t border-white/10 flex flex-wrap gap-2">
+                       {cred.skillsGained.map(s => (
+                         <span key={s} className="text-[10px] bg-white/10 text-white/80 px-2 py-1 rounded tracking-wide">
+                           {s}
+                         </span>
+                       ))}
+                     </div>
+                   </div>
+
+                 </motion.div>
+               ))}
+             </div>
           </div>
 
         </div>

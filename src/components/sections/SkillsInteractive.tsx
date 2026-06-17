@@ -10,35 +10,57 @@ const skillsData = [
     title: "Frontend Engineering",
     icon: <Code2 className="w-6 h-6 md:w-8 md:h-8" />,
     description: "Crafting pixel-perfect, responsive, and highly animated user interfaces.",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "GSAP"]
+    skills: [
+      { name: "Next.js", projects: ["Shineora", "Portfolio"] },
+      { name: "React", projects: ["Shineora", "Student Portal"] },
+      { name: "TypeScript", projects: ["Shineora", "Portfolio", "Elize"] },
+      { name: "Tailwind CSS", projects: ["Shineora", "Portfolio"] },
+      { name: "Framer Motion", projects: ["Portfolio", "Shineora"] }
+    ]
   },
   {
     id: "backend",
     title: "Backend Architecture",
     icon: <Database className="w-6 h-6 md:w-8 md:h-8" />,
     description: "Building scalable APIs and managing robust data architectures.",
-    skills: ["Node.js", "MySQL", "RESTful APIs", "Java", "Python", "C++"]
+    skills: [
+      { name: "Node.js", projects: ["Elize"] },
+      { name: "MySQL", projects: ["Student Management System"] },
+      { name: "REST APIs", projects: ["Shineora", "Elize"] }
+    ]
   },
   {
     id: "ai",
     title: "AI Integration",
     icon: <BrainCircuit className="w-6 h-6 md:w-8 md:h-8" />,
     description: "Integrating intelligent capabilities into applications through advanced models.",
-    skills: ["Prompt Engineering", "Generative AI", "LLM APIs", "AI Agents"]
+    skills: [
+      { name: "Prompt Engineering", projects: ["Elize"] },
+      { name: "LLM Orchestration", projects: ["Elize"] },
+      { name: "OpenAI API", projects: ["Elize"] }
+    ]
   },
   {
     id: "automation",
     title: "Workflow Automation",
     icon: <Workflow className="w-6 h-6 md:w-8 md:h-8" />,
     description: "Orchestrating complex business logic and third-party integrations.",
-    skills: ["n8n", "Webhooks", "Telegram Bot API", "Process Optimization"]
+    skills: [
+      { name: "n8n", projects: ["Elize"] },
+      { name: "Webhooks", projects: ["Elize"] },
+      { name: "Telegram Bot API", projects: ["Elize"] }
+    ]
   },
   {
     id: "deployment",
     title: "Cloud & Deployment",
     icon: <Rocket className="w-6 h-6 md:w-8 md:h-8" />,
     description: "Ensuring applications are delivered securely, reliably, and globally.",
-    skills: ["AWS Data Analytics", "Vercel", "Git/GitHub", "Linux OS"]
+    skills: [
+      { name: "Vercel Edge", projects: ["Shineora", "Portfolio"] },
+      { name: "AWS", projects: ["Data Analytics Simulations"] },
+      { name: "CI/CD", projects: ["Shineora", "Portfolio"] }
+    ]
   }
 ];
 
@@ -98,14 +120,24 @@ export default function SkillsInteractive() {
                         <div className="md:w-1/3">
                            <p className="text-muted-foreground font-light leading-relaxed">{category.description}</p>
                         </div>
-                        <div className="md:w-2/3 flex flex-wrap gap-3">
+                        <div className="md:w-2/3 flex flex-wrap gap-4">
                           {category.skills.map((skill) => (
-                            <span 
-                              key={skill} 
-                              className="px-5 py-2.5 rounded-full border border-white/10 bg-[#1A1A1A] text-white text-sm font-medium tracking-wide"
+                            <div 
+                              key={skill.name} 
+                              className="group relative px-5 py-3 rounded-2xl border border-white/10 bg-[#1A1A1A] hover:bg-[#222] hover:border-white/20 transition-all cursor-default"
                             >
-                              {skill}
-                            </span>
+                              <div className="text-white text-sm font-medium tracking-wide mb-1">
+                                {skill.name}
+                              </div>
+                              <div className="flex flex-wrap gap-2 mt-2 opacity-60 group-hover:opacity-100 transition-opacity">
+                                <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Used In:</span>
+                                {skill.projects.map(p => (
+                                  <span key={p} className="text-[10px] text-primary bg-primary/10 px-2 py-0.5 rounded">
+                                    {p}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
                           ))}
                         </div>
                       </div>

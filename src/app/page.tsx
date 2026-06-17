@@ -6,6 +6,8 @@ import CaseStudyElize from "@/components/sections/CaseStudyElize";
 import SkillsInteractive from "@/components/sections/SkillsInteractive";
 import PerspectiveChoice from "@/components/sections/PerspectiveChoice";
 import Certifications from "@/components/sections/Certifications";
+import LeetCodeExperience from "@/components/sections/LeetCodeExperience";
+import CurrentlyBuilding from "@/components/sections/CurrentlyBuilding";
 import Contact from "@/components/sections/Contact";
 
 export default function Home() {
@@ -19,6 +21,8 @@ export default function Home() {
       <SkillsInteractive />
       <PerspectiveChoice />
       <Certifications />
+      <LeetCodeExperience />
+      <CurrentlyBuilding />
       <Contact />
     </main>
   );

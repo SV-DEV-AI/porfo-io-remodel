@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import { Bot, Network, MessageSquare, Cpu, ArrowUpRight } from "lucide-react";
 
 export default function CaseStudyElize() {
@@ -13,6 +14,7 @@ export default function CaseStudyElize() {
 
   const opacity = useTransform(scrollYProgress, [0, 1], [0.2, 1]);
   const y = useTransform(scrollYProgress, [0, 1], [100, 0]);
+  const [activeNode, setActiveNode] = useState<string | null>(null);
 
   return (
     <section ref={containerRef} className="w-full bg-[#050505] text-white py-32 md:py-48 relative overflow-hidden border-t border-white/5">
@@ -43,7 +45,7 @@ export default function CaseStudyElize() {
           
           <h3 className="text-2xl font-semibold mb-16 text-center tracking-tight">System Architecture</h3>
           
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4 max-w-4xl mx-auto relative">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4 max-w-4xl mx-auto relative mb-12">
             {/* Connection Lines (Desktop) */}
             <div className="hidden md:block absolute top-1/2 left-12 right-12 h-[2px] bg-white/10 -translate-y-1/2 z-0">
                <motion.div 
@@ -53,15 +55,27 @@ export default function CaseStudyElize() {
                />
             </div>
 
-            {/* Node 1 */}
-            <Node icon={<MessageSquare />} title="Telegram API" desc="User Input" delay={0} />
-            {/* Node 2 */}
-            <Node icon={<Network />} title="n8n" desc="Orchestration" delay={0.5} />
-            {/* Node 3 */}
-            <Node icon={<Cpu />} title="LLM (AI)" desc="Processing" delay={1.0} />
-            {/* Node 4 */}
-            <Node icon={<Bot />} title="Response" desc="Output Delivery" delay={1.5} />
+            <Node id="telegram" icon={<MessageSquare />} title="Telegram API" desc="User Input" delay={0} activeNode={activeNode} onClick={() => setActiveNode(activeNode === 'telegram' ? null : 'telegram')} />
+            <Node id="n8n" icon={<Network />} title="n8n" desc="Orchestration" delay={0.5} activeNode={activeNode} onClick={() => setActiveNode(activeNode === 'n8n' ? null : 'n8n')} />
+            <Node id="llm" icon={<Cpu />} title="LLM (AI)" desc="Processing" delay={1.0} activeNode={activeNode} onClick={() => setActiveNode(activeNode === 'llm' ? null : 'llm')} />
+            <Node id="response" icon={<Bot />} title="Response" desc="Output Delivery" delay={1.5} activeNode={activeNode} onClick={() => setActiveNode(activeNode === 'response' ? null : 'response')} />
           </div>
+
+          <AnimatePresence mode="wait">
+            {activeNode && (
+              <motion.div
+                key={activeNode}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+                className="max-w-2xl mx-auto bg-blue-500/10 border border-blue-500/20 p-6 rounded-2xl text-center"
+              >
+                <h4 className="text-xl font-medium text-white mb-2">{nodeDetails[activeNode].title}</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">{nodeDetails[activeNode].content}</p>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         {/* Deep Dive Grid */}
@@ -85,25 +99,49 @@ export default function CaseStudyElize() {
   );
 }
 
-function Node({ icon, title, desc, delay }: { icon: React.ReactNode, title: string, desc: string, delay: number }) {
+const nodeDetails: Record<string, {title: string, content: string}> = {
+  "telegram": {
+    title: "Client Interface",
+    content: "Acts as the frictionless front-end. Captures raw student queries directly from their mobile devices without requiring any app installation or complex authentication."
+  },
+  "n8n": {
+    title: "Stateful Orchestration Engine",
+    content: "The central nervous system. Receives webhooks, manages session state, verifies user permissions, and structures the payload before passing it to the intelligence layer."
+  },
+  "llm": {
+    title: "Intelligence Layer",
+    content: "Processes the structured context. Uses advanced prompt engineering to ensure responses are pedagogically sound, preventing hallucinations and ensuring academic integrity."
+  },
+  "response": {
+    title: "Low-Latency Delivery",
+    content: "The generated response is streamed back through n8n to the Telegram API, arriving at the student's device in under 2 seconds."
+  }
+};
+
+function Node({ id, icon, title, desc, delay, activeNode, onClick }: { id: string, icon: React.ReactNode, title: string, desc: string, delay: number, activeNode: string | null, onClick: () => void }) {
+  const isActive = activeNode === id;
   return (
-    <div className="relative z-10 flex flex-col items-center gap-4 w-full md:w-auto">
+    <div className="relative z-10 flex flex-col items-center gap-4 w-full md:w-auto group cursor-pointer" onClick={onClick}>
       <motion.div 
         initial={{ scale: 0.8, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         transition={{ delay, duration: 0.5 }}
         viewport={{ once: true }}
-        className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#1A1A1A] border-2 border-white/10 flex items-center justify-center text-blue-400 shadow-[0_0_30px_rgba(59,130,246,0.15)] relative"
+        className={`w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center relative transition-all duration-300 ${
+          isActive 
+            ? "bg-blue-500 text-white shadow-[0_0_40px_rgba(59,130,246,0.5)] border-transparent scale-110" 
+            : "bg-[#1A1A1A] border-2 border-white/10 text-blue-400 group-hover:border-blue-500/50 group-hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]"
+        }`}
       >
         <motion.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 2, delay, repeat: Infinity }}
-          className="absolute inset-0 rounded-full border border-blue-500/30"
+          className={`absolute inset-0 rounded-full border ${isActive ? "border-white/30" : "border-blue-500/30"}`}
         />
-        {icon}
+        <div className="relative z-10">{icon}</div>
       </motion.div>
       <div className="text-center">
-        <h5 className="font-medium text-white">{title}</h5>
+        <h5 className={`font-medium transition-colors ${isActive ? "text-blue-400" : "text-white"}`}>{title}</h5>
         <span className="text-xs text-muted-foreground uppercase tracking-widest">{desc}</span>
       </div>
     </div>

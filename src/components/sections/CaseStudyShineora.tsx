@@ -60,43 +60,112 @@ export default function CaseStudyShineora() {
           ))}
         </div>
 
-        {/* Story */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-32">
-          <motion.div style={{ y: y1 }} className="space-y-24">
-            <div>
-              <h3 className="text-4xl font-semibold mb-8 text-white tracking-tight">The Challenge</h3>
-              <p className="text-muted-foreground text-xl leading-relaxed font-light">
-                Creating an e-commerce platform that doesn&apos;t just sell products, but tells a story. The existing solutions were clunky, slow, and failed to capture the luxury aesthetic of fashion jewellery. We needed a system that was blazing fast, SEO-optimized, and visually stunning.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-4xl font-semibold mb-8 text-white tracking-tight">The Solution</h3>
-              <p className="text-muted-foreground text-xl leading-relaxed font-light">
-                I engineered a custom storefront from the ground up, navigating complex client requirements. By integrating headless commerce APIs, I decoupled the frontend from the backend, ensuring sub-second page loads, exceptional mobile optimization, and seamless, app-like transitions between categories.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-4xl font-semibold mb-8 text-white tracking-tight">The Impact</h3>
-              <p className="text-muted-foreground text-xl leading-relaxed font-light">
-                Successfully deployed a scalable platform capable of handling real-world business transactions. Gained deep hands-on experience in production deployments, product management, and responsive architectural design.
-              </p>
-            </div>
-          </motion.div>
-
-          <div className="space-y-12">
-            <div className="aspect-square bg-[#1A1A1A] rounded-[2.5rem] border border-border/10 p-12 flex flex-col justify-end relative overflow-hidden group">
-               <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[120px] rounded-full transition-transform duration-700 group-hover:scale-110"></div>
-               <h4 className="text-3xl font-medium mb-4 text-white">SEO & Deployment</h4>
-               <p className="text-muted-foreground text-lg font-light leading-relaxed">Built on a cutting-edge stack for maximum performance, global edge deployment, and aggressive search engine optimization.</p>
-            </div>
-            <div className="aspect-[4/3] bg-[#0B0B0B] rounded-[2.5rem] border border-border/10 p-12 flex flex-col justify-end relative overflow-hidden group">
-               <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 blur-[120px] rounded-full transition-transform duration-700 group-hover:scale-110"></div>
-               <h4 className="text-3xl font-medium mb-4 text-white">UX & Mobile First</h4>
-               <p className="text-muted-foreground text-lg font-light leading-relaxed">Utilized fluid, perfectly spaced layouts that feel native and expensive across all device viewports.</p>
-            </div>
+        {/* Build Explorer */}
+        <div className="mt-24">
+          <div className="flex items-center gap-4 mb-12">
+            <h3 className="text-3xl md:text-5xl font-semibold text-white tracking-tight">How It Was Built</h3>
+            <div className="h-[1px] flex-1 bg-border/20"></div>
           </div>
+          <BuildExplorer />
         </div>
       </div>
     </section>
+  );
+}
+
+const buildStages = [
+  {
+    id: "research",
+    title: "01. Research & Strategy",
+    content: "Analyzed existing luxury e-commerce platforms. The goal was to identify UX friction points. Discovered that slow image loading and clunky category transitions were the biggest drop-off points for users.",
+    tech: ["Market Analysis", "UX Auditing"]
+  },
+  {
+    id: "design",
+    title: "02. Design & Architecture",
+    content: "Drafted a fluid, typography-first design system. Decided on a headless architecture to completely decouple the frontend presentation from the backend business logic, ensuring maximum creative freedom.",
+    tech: ["Figma", "Headless Commerce", "System Design"]
+  },
+  {
+    id: "dev",
+    title: "03. Development",
+    content: "Engineered the storefront using React and Tailwind CSS. Implemented complex state management for the cart and seamless page transitions. Focused heavily on building reusable, accessible components.",
+    tech: ["React", "TypeScript", "Tailwind CSS"]
+  },
+  {
+    id: "opt",
+    title: "04. Optimization",
+    content: "Aggressively optimized Web Vitals. Implemented advanced image compression, dynamic imports for heavy components, and strategic caching to ensure sub-second page loads across all devices.",
+    tech: ["Next.js Image", "Dynamic Imports", "Lighthouse"]
+  },
+  {
+    id: "deploy",
+    title: "05. Deployment",
+    content: "Configured edge deployment for global low-latency access. Set up automated CI/CD pipelines to ensure that every push to the main branch is instantly built, tested, and deployed to production safely.",
+    tech: ["Vercel Edge", "CI/CD", "GitHub Actions"]
+  }
+];
+
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { ChevronRight } from "lucide-react";
+
+function BuildExplorer() {
+  const [activeStage, setActiveStage] = useState(buildStages[0].id);
+
+  const activeData = buildStages.find(s => s.id === activeStage)!;
+
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-24">
+      {/* Navigation */}
+      <div className="flex flex-col gap-2">
+        {buildStages.map((stage) => {
+          const isActive = activeStage === stage.id;
+          return (
+            <button
+              key={stage.id}
+              onClick={() => setActiveStage(stage.id)}
+              className={`text-left flex items-center justify-between p-4 rounded-xl transition-all duration-300 ${
+                isActive 
+                  ? "bg-white/10 text-white shadow-[0_0_20px_rgba(255,255,255,0.05)]" 
+                  : "text-muted-foreground hover:bg-white/5 hover:text-white"
+              }`}
+            >
+              <span className="font-mono text-sm tracking-widest">{stage.title}</span>
+              {isActive && <ChevronRight className="w-4 h-4" />}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Content Area */}
+      <div className="lg:col-span-2 relative min-h-[300px] bg-[#1A1A1A] rounded-[2rem] border border-white/5 p-8 md:p-12 overflow-hidden flex flex-col justify-center">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
+        
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeData.id}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="relative z-10"
+          >
+            <h4 className="text-2xl md:text-4xl font-semibold text-white mb-6 tracking-tight">{activeData.title.split(". ")[1]}</h4>
+            <p className="text-muted-foreground text-lg md:text-xl font-light leading-relaxed mb-10">
+              {activeData.content}
+            </p>
+            
+            <div className="flex flex-wrap gap-3">
+              {activeData.tech.map(t => (
+                <span key={t} className="px-4 py-2 rounded-full bg-[#222] border border-white/10 text-xs font-mono uppercase tracking-widest text-white/80">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </div>
   );
 }
