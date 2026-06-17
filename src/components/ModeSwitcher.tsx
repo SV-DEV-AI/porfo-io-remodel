@@ -19,15 +19,28 @@ export default function ModeSwitcher() {
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
-        className="flex items-center gap-1 p-1.5 bg-[#111]/80 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl"
+        className="flex items-center gap-1 p-1.5 bg-[#111]/80 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl max-w-[95vw] overflow-x-auto"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {modes.map((m) => {
           const isActive = mode === m.id;
           return (
             <button
               key={m.id}
-              onClick={() => setMode(m.id)}
-              className={`relative flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              onClick={() => {
+                setMode(m.id);
+                let target = null;
+                if (m.id === 'developer') target = document.getElementById('tech-stack');
+                if (m.id === 'ai-builder') target = document.getElementById('elize-ai');
+                if (m.id === 'entrepreneur') target = document.getElementById('shineora-metrics');
+                
+                if (target) {
+                  const yOffset = -100; // Offset for sticky headers if any, or just breathing room
+                  const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                  window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+              }}
+              className={`relative flex items-center shrink-0 gap-1.5 md:gap-2 px-3 md:px-4 py-2 rounded-full text-[11px] md:text-sm font-medium transition-colors ${
                 isActive ? "text-white" : "text-muted-foreground hover:text-white/80"
               }`}
             >
@@ -39,7 +52,7 @@ export default function ModeSwitcher() {
                 />
               )}
               <span className="relative z-10">{m.icon}</span>
-              <span className="relative z-10 hidden sm:inline-block">{m.label}</span>
+              <span className="relative z-10">{m.label}</span>
             </button>
           );
         })}

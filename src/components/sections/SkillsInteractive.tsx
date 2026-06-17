@@ -70,7 +70,7 @@ export default function SkillsInteractive() {
   const [activeId, setActiveId] = useState<string | null>(skillsData[0].id);
 
   return (
-    <section className="w-full bg-[#0B0B0B] text-foreground py-24 md:py-32 relative overflow-hidden">
+    <section id="tech-stack" className="w-full bg-[#0B0B0B] text-foreground py-24 md:py-32 relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10">
         
         <div className="text-center mb-16">
