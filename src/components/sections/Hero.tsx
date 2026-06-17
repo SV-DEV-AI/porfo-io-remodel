@@ -36,9 +36,7 @@ export default function Hero() {
         animate="visible"
       >
         <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-3 mb-6 text-xs md:text-sm font-medium text-muted-foreground uppercase tracking-widest">
-          <span className="px-4 py-1.5 rounded-full border border-border/50 bg-secondary/30 backdrop-blur-md">Full-Stack Developer</span>
-          <span className="px-4 py-1.5 rounded-full border border-border/50 bg-secondary/30 backdrop-blur-md">AI Builder</span>
-          <span className="px-4 py-1.5 rounded-full border border-border/50 bg-secondary/30 backdrop-blur-md">Problem Solver</span>
+          <span className="px-4 py-1.5 rounded-full border border-border/50 bg-secondary/30 backdrop-blur-md">Computer Science Student</span>
         </motion.div>
 
         <motion.h1
@@ -48,12 +46,14 @@ export default function Hero() {
           Sarthak Verma
         </motion.h1>
 
-        <motion.p
-          variants={itemVariants}
-          className="max-w-3xl text-base md:text-xl lg:text-2xl text-muted-foreground font-light leading-relaxed"
-        >
-          Building digital experiences, automation systems, and AI-powered products.
-        </motion.p>
+        <motion.div variants={itemVariants} className="flex flex-col items-center gap-4">
+          <p className="max-w-3xl text-base md:text-xl lg:text-2xl text-muted-foreground font-light leading-relaxed">
+            Building AI-powered applications, e-commerce platforms,<br className="hidden md:block"/> and automation systems.
+          </p>
+          <p className="text-sm md:text-base text-white/60 font-medium tracking-wide">
+            Developer of <span className="text-white">Shineora</span> and <span className="text-white">Elize</span>.
+          </p>
+        </motion.div>
       </motion.div>
 
       <motion.div

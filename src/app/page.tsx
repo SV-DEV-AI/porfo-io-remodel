@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/Hero";
+import Experience from "@/components/sections/Experience";
 import StoryTimeline from "@/components/sections/StoryTimeline";
 import CaseStudyStudentPortal from "@/components/sections/CaseStudyStudentPortal";
 import CaseStudyShineora from "@/components/sections/CaseStudyShineora";
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-start overflow-hidden">
       <Hero />
+      <Experience />
       <StoryTimeline />
       <CaseStudyStudentPortal />
       <CaseStudyShineora />

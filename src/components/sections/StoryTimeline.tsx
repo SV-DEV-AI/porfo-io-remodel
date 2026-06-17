@@ -8,49 +8,49 @@ const timelineData = [
   {
     id: "phase1",
     year: "Phase I",
-    title: "Student Portal",
-    description: "Learning web development fundamentals and building the foundation of my technical journey.",
+    title: "The Fundamentals",
+    description: "Realized early on that just knowing syntax isn't enough. I focused on building raw, un-frameworked applications to deeply understand how the web actually works under the hood.",
     icon: <LayoutTemplate className="w-5 h-5" />,
     details: {
-      lessons: "Mastered DOM manipulation, vanilla JS, and CSS layouts without relying on frameworks.",
-      milestone: "First fully responsive web application.",
-      achievement: "Built the foundation for scalable thinking."
+      lessons: "Mastered DOM manipulation, vanilla JS, and CSS layouts without relying on abstractions.",
+      milestone: "Built my first full-stack student portal.",
+      achievement: "Developed a core problem-solving mindset."
     }
   },
   {
     id: "phase2",
     year: "Phase II",
-    title: "Shineora",
-    description: "Building a production e-commerce platform. Focused on architecture, UX, and deploying real-world solutions.",
+    title: "Production Engineering",
+    description: "Transitioned from building 'projects' to shipping real 'products'. I became obsessed with performance optimization, clean UX, and solving actual business requirements.",
     icon: <Briefcase className="w-5 h-5" />,
     details: {
       lessons: "Learned the importance of decoupling state, headless APIs, and edge deployment.",
-      milestone: "Deployed a high-performance Next.js store.",
-      achievement: "Engineered sub-second page loads."
+      milestone: "Deployed Shineora, a high-performance Next.js store.",
+      achievement: "Engineered sub-second page loads for real users."
     }
   },
   {
     id: "phase3",
     year: "Phase III",
-    title: "Elize",
-    description: "Exploring AI and workflow automation. Bridging the gap between raw intelligence and user utility.",
+    title: "AI & Automation",
+    description: "Started bridging the gap between raw LLM intelligence and user utility. I build autonomous workflows to eliminate repetitive tasks and create frictionless experiences.",
     icon: <Network className="w-5 h-5" />,
     details: {
       lessons: "Prompt engineering is just the start; orchestrating LLMs into stateful agents is the real challenge.",
-      milestone: "Built an end-to-end n8n workflow.",
-      achievement: "Integrated Telegram Bot API seamlessly."
+      milestone: "Engineered Elize using n8n and Telegram APIs.",
+      achievement: "Built a 24/7 autonomous academic assistant."
     }
   },
   {
     id: "phase4",
     year: "Phase IV",
-    title: "The Future",
-    description: "Building intelligent software systems. Continuously pushing the boundaries of product engineering and automation.",
+    title: "The Horizon",
+    description: "Currently focused on distributed architectures and the next generation of human-computer interaction. I'm always looking for the next hard problem to solve.",
     icon: <Cpu className="w-5 h-5" />,
     details: {
-      lessons: "Currently deep diving into distributed architectures and autonomous AI agent swarms.",
-      milestone: "Exploring new paradigms in human-computer interaction.",
-      achievement: "Always building."
+      lessons: "Diving into complex data structures, autonomous swarms, and scalable backend design.",
+      milestone: "Exploring new paradigms in software architecture.",
+      achievement: "Building software that matters."
     }
   },
 ];

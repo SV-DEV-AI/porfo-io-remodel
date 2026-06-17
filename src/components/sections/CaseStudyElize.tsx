@@ -39,8 +39,32 @@ export default function CaseStudyElize() {
           </a>
         </div>
 
-        {/* Interactive Architecture Flow */}
-        <div className="w-full bg-[#0A0A0A] border border-white/10 rounded-[3rem] p-8 md:p-12 mb-24 relative overflow-hidden shadow-2xl shadow-blue-900/10">
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-white/10 py-12 mb-24">
+          {[
+            { label: "Product", value: "AI Academic Assistant" },
+            { label: "Platform", value: "Telegram Integration" },
+            { label: "Workflow", value: "n8n Automation" },
+            { label: "Process", value: "Multi-Step AI" },
+          ].map((stat, i) => (
+            <div key={i} className="flex flex-col gap-3">
+              <span className="text-muted-foreground text-xs uppercase tracking-[0.2em]">{stat.label}</span>
+              <span className="text-xl md:text-2xl font-medium text-white">{stat.value}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Visual Framework & Architecture */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-24">
+          
+          {/* Chat Interface Placeholder */}
+          <motion.div className="lg:col-span-4 h-full bg-gradient-to-br from-blue-900/10 to-[#0B0B0B] border border-blue-500/10 rounded-3xl overflow-hidden relative flex flex-col items-center justify-center shadow-2xl group min-h-[400px]">
+            <MessageSquare className="w-12 h-12 text-blue-500/20 mb-4 group-hover:scale-110 transition-transform duration-500" />
+            <p className="text-blue-500/50 font-mono text-xs uppercase tracking-widest relative z-10">Telegram Chat Interface</p>
+          </motion.div>
+
+          {/* Interactive Architecture Flow */}
+          <div className="lg:col-span-8 w-full bg-[#0A0A0A] border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl shadow-blue-900/10 flex flex-col justify-center">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent pointer-events-none"></div>
           
           <h3 className="text-2xl font-semibold mb-16 text-center tracking-tight">System Architecture</h3>
@@ -77,6 +101,7 @@ export default function CaseStudyElize() {
             )}
           </AnimatePresence>
         </div>
+      </div>
 
         {/* Deep Dive Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

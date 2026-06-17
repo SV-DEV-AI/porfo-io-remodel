@@ -4,10 +4,9 @@ import { motion } from "framer-motion";
 import { Activity } from "lucide-react";
 
 const currentFocus = [
-  "Autonomous AI Agents",
-  "Distributed Automation Systems",
-  "Typography-First Design",
-  "Edge Computing Architectures"
+  "Shineora V2",
+  "AI Shopping Assistant",
+  "Elize Automation Platform"
 ];
 
 export default function CurrentlyBuilding() {
@@ -32,7 +31,7 @@ export default function CurrentlyBuilding() {
           </div>
           <div>
             <span className="text-primary font-mono text-xs uppercase tracking-widest block mb-1">Live Status</span>
-            <h3 className="text-2xl font-semibold text-white tracking-tight">Currently Exploring</h3>
+            <h3 className="text-2xl font-semibold text-white tracking-tight">Currently Building</h3>
           </div>
         </div>
 

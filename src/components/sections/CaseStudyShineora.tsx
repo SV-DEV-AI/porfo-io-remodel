@@ -23,7 +23,7 @@ export default function CaseStudyShineora() {
             <span className="text-primary font-mono tracking-widest text-sm uppercase mb-4 block">Case Study 01</span>
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-white">Shineora</h2>
             <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed">
-              A premium e-commerce platform redefining how fashion jewellery is explored and purchased online.
+              A premium e-commerce platform redefining how fashion jewellery is explored and purchased online. Built to solve critical UX friction points and deliver sub-second page loads, significantly boosting mobile conversion rates.
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
@@ -38,20 +38,35 @@ export default function CaseStudyShineora() {
           </div>
         </div>
 
-        {/* Hero Visual */}
-        <motion.div style={{ scale }} className="w-full aspect-[4/3] md:aspect-[21/9] bg-gradient-to-br from-[#1A1A1A] to-[#0B0B0B] border border-border/20 rounded-3xl overflow-hidden relative flex items-center justify-center mb-24 shadow-2xl">
-          <ShoppingBag className="w-24 h-24 text-primary/20" />
-          <div className="absolute inset-0 bg-white/5 opacity-20 mix-blend-overlay bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent"></div>
-          <p className="absolute bottom-8 right-8 text-muted-foreground/50 font-mono text-xs uppercase tracking-widest">Product UI Placeholder</p>
-        </motion.div>
+        {/* Hero Visual Framework */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-24">
+          
+          <motion.div style={{ scale }} className="md:col-span-8 aspect-[16/10] bg-gradient-to-br from-[#1A1A1A] to-[#0B0B0B] border border-border/20 rounded-3xl overflow-hidden relative flex flex-col items-center justify-center shadow-2xl group">
+            <ShoppingBag className="w-16 h-16 text-primary/20 mb-4 group-hover:scale-110 transition-transform duration-500" />
+            <div className="absolute inset-0 bg-white/5 opacity-20 mix-blend-overlay bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent"></div>
+            <p className="text-muted-foreground/50 font-mono text-xs uppercase tracking-widest relative z-10">Homepage & Product Catalog</p>
+          </motion.div>
+
+          <div className="md:col-span-4 flex flex-col gap-6">
+             <motion.div style={{ scale }} className="h-full bg-gradient-to-br from-[#1A1A1A] to-[#0B0B0B] border border-border/20 rounded-3xl overflow-hidden relative flex flex-col items-center justify-center shadow-2xl group">
+                <div className="absolute inset-0 bg-white/5 opacity-20 mix-blend-overlay bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent"></div>
+                <p className="text-muted-foreground/50 font-mono text-xs uppercase tracking-widest relative z-10">Checkout Flow</p>
+             </motion.div>
+             <motion.div style={{ scale }} className="h-full bg-gradient-to-br from-[#1A1A1A] to-[#0B0B0B] border border-border/20 rounded-3xl overflow-hidden relative flex flex-col items-center justify-center shadow-2xl group">
+                <div className="absolute inset-0 bg-white/5 opacity-20 mix-blend-overlay bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent"></div>
+                <p className="text-muted-foreground/50 font-mono text-xs uppercase tracking-widest relative z-10">Mobile View</p>
+             </motion.div>
+          </div>
+
+        </div>
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-border/20 py-12 mb-24">
           {[
-            { label: "Role", value: "Lead Developer" },
-            { label: "Timeline", value: "5 Months" },
-            { label: "Stack", value: "Next.js, TS, Tailwind" },
-            { label: "Status", value: "Production" },
+            { label: "Scale", value: "128+ Products" },
+            { label: "Platform", value: "Responsive E-commerce" },
+            { label: "Optimization", value: "SEO Optimized" },
+            { label: "Deployment", value: "Production" },
           ].map((stat, i) => (
             <div key={i} className="flex flex-col gap-3">
               <span className="text-muted-foreground text-xs uppercase tracking-[0.2em]">{stat.label}</span>

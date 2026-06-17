@@ -11,6 +11,12 @@ const links = [
     handle: "View PDF"
   },
   {
+    name: "Email",
+    url: "mailto:hello@sarthakverma.com",
+    icon: <Mail className="w-5 h-5" />,
+    handle: "Get in touch"
+  },
+  {
     name: "GitHub",
     url: "https://github.com/SV-DEV-AI",
     icon: <GitBranch className="w-5 h-5" />,

@@ -25,6 +25,7 @@ const skillsData = [
     description: "Building scalable APIs and managing robust data architectures.",
     skills: [
       { name: "Node.js", projects: ["Elize"] },
+      { name: "Firebase", projects: ["Client Projects"] },
       { name: "MySQL", projects: ["Student Management System"] },
       { name: "REST APIs", projects: ["Shineora", "Elize"] }
     ]
@@ -59,6 +60,7 @@ const skillsData = [
     skills: [
       { name: "Vercel Edge", projects: ["Shineora", "Portfolio"] },
       { name: "AWS", projects: ["Data Analytics Simulations"] },
+      { name: "Hostinger", projects: ["Various Web Apps"] },
       { name: "CI/CD", projects: ["Shineora", "Portfolio"] }
     ]
   }
