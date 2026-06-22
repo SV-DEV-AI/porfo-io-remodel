@@ -48,12 +48,12 @@ export default function MiniAIAssistant() {
   return (
     <>
       {/* Floating Toggle Button */}
-      <div className="fixed bottom-8 right-8 z-50">
+      <div className="fixed bottom-24 right-4 md:bottom-8 md:right-8 z-50 pb-[env(safe-area-inset-bottom)]">
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsOpen(!isOpen)}
-          className="w-14 h-14 bg-primary text-primary-foreground rounded-full shadow-[0_0_20px_rgba(var(--primary),0.3)] flex items-center justify-center border border-primary-foreground/10"
+          className="w-12 h-12 md:w-14 md:h-14 bg-primary text-primary-foreground rounded-full shadow-[0_0_20px_rgba(var(--primary),0.3)] flex items-center justify-center border border-primary-foreground/10"
         >
           <AnimatePresence mode="wait">
             {isOpen ? (
@@ -77,20 +77,25 @@ export default function MiniAIAssistant() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="fixed bottom-28 right-8 z-50 w-[350px] max-w-[calc(100vw-4rem)] bg-[#111] border border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+            className="fixed bottom-0 left-0 right-0 md:left-auto md:bottom-28 md:right-8 z-[60] w-full md:w-[350px] h-[75vh] md:h-auto md:max-h-[80vh] md:max-w-[calc(100vw-4rem)] bg-[#111] border-t md:border border-white/10 rounded-t-2xl md:rounded-2xl shadow-2xl flex flex-col overflow-hidden pb-[env(safe-area-inset-bottom)]"
           >
             {/* Header */}
-            <div className="bg-[#1A1A1A] p-4 border-b border-white/5 flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-                <Bot className="w-4 h-4" />
-              </div>
-              <div>
-                <h4 className="text-white font-medium text-sm">Ask Sarthak</h4>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                  <span className="text-xs text-muted-foreground font-mono">Curated AI</span>
+            <div className="bg-[#1A1A1A] p-4 border-b border-white/5 flex items-center justify-between gap-3 shrink-0">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                  <Bot className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="text-white font-medium text-sm">Ask Sarthak</h4>
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+                    <span className="text-xs text-muted-foreground font-mono">Curated AI</span>
+                  </div>
                 </div>
               </div>
+              <button onClick={() => setIsOpen(false)} className="md:hidden text-muted-foreground hover:text-white p-2 -mr-2">
+                <X className="w-5 h-5" />
+              </button>
             </div>
 
             {/* Messages Area */}

@@ -38,7 +38,7 @@ const links = [
 
 export default function Contact() {
   return (
-    <section className="w-full bg-[#0B0B0B] text-foreground py-32 md:py-48 relative border-t border-white/5 overflow-hidden">
+    <section className="w-full bg-[#0B0B0B] text-foreground py-16 md:py-48 relative border-t border-white/5 overflow-hidden">
       {/* Background elegant gradient */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary/10 blur-[200px] rounded-[100%] pointer-events-none translate-y-1/2" />
 
@@ -51,7 +51,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6">
+          <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tighter text-white mb-6">
             Let&apos;s build something <br className="hidden md:block" /> <span className="text-primary italic font-serif tracking-normal">meaningful.</span>
           </h2>
           <p className="text-muted-foreground text-xl md:text-2xl font-light">
@@ -70,7 +70,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: i * 0.1, ease: "easeOut" as const }}
               viewport={{ once: true }}
-              className="group flex items-center justify-between px-8 py-6 rounded-full border border-white/10 bg-[#111] hover:bg-[#1A1A1A] hover:border-white/20 transition-all duration-300 w-full md:w-auto min-w-[280px]"
+              className="group flex items-center justify-between px-8 py-6 rounded-full border border-white/10 bg-[#111] hover:bg-[#1A1A1A] hover:border-white/20 transition-all duration-300 w-full md:w-auto"
             >
               <div className="flex items-center gap-4 text-white">
                 <div className="p-2 rounded-full bg-white/5 group-hover:bg-primary/20 group-hover:text-primary transition-colors">

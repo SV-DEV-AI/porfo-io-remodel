@@ -88,5 +88,5 @@ function Counter({ value, active }: { value: number; active: boolean }) {
     return () => clearInterval(timer);
   }, [value, active]);
 
-  return <span className="text-6xl md:text-8xl font-bold text-white tracking-tighter tabular-nums">{count}</span>;
+  return <span className="text-5xl md:text-8xl font-bold text-white tracking-tighter tabular-nums">{count}</span>;
 }

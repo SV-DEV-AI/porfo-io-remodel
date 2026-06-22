@@ -14,12 +14,12 @@ export default function ModeSwitcher() {
   const { mode, setMode } = useMode();
 
   return (
-    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
+    <div className="fixed bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-50 w-max pb-[env(safe-area-inset-bottom)]">
       <motion.div 
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
-        className="flex items-center gap-1 p-1.5 bg-[#111]/80 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl max-w-[95vw] overflow-x-auto"
+        className="flex items-center gap-1 p-1.5 bg-[#111]/80 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl overflow-x-auto"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {modes.map((m) => {
@@ -40,7 +40,7 @@ export default function ModeSwitcher() {
                   window.scrollTo({ top: y, behavior: 'smooth' });
                 }
               }}
-              className={`relative flex items-center shrink-0 gap-1.5 md:gap-2 px-3 md:px-4 py-2 rounded-full text-[11px] md:text-sm font-medium transition-colors ${
+              className={`relative flex items-center shrink-0 gap-1.5 md:gap-2 p-2 md:px-4 md:py-2 rounded-full text-[11px] md:text-sm font-medium transition-colors ${
                 isActive ? "text-white" : "text-muted-foreground hover:text-white/80"
               }`}
             >
@@ -52,7 +52,7 @@ export default function ModeSwitcher() {
                 />
               )}
               <span className="relative z-10">{m.icon}</span>
-              <span className="relative z-10">{m.label}</span>
+              <span className="relative z-10 hidden md:inline">{m.label}</span>
             </button>
           );
         })}

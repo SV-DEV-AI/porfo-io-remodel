@@ -79,7 +79,7 @@ export default function Certifications() {
     <section className="w-full bg-[#080808] text-foreground py-24 md:py-32 relative overflow-hidden border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
-        <div className="flex flex-col md:flex-row gap-16 md:gap-24">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-24">
           
           <div className="md:w-1/3">
             <div className="sticky top-32">
@@ -119,7 +119,7 @@ export default function Certifications() {
                    </div>
 
                    {/* Hover Reveal Content */}
-                   <div className="absolute bottom-8 left-8 right-8 opacity-0 group-hover:opacity-100 translate-y-8 group-hover:translate-y-0 transition-all duration-500 ease-out delay-100">
+                   <div className="absolute bottom-8 left-8 right-8 opacity-100 md:opacity-0 group-hover:opacity-100 translate-y-0 md:translate-y-8 group-hover:translate-y-0 transition-all duration-500 ease-out delay-100">
                      <div className="pt-4 border-t border-white/10 flex flex-wrap gap-2">
                        {cred.skillsGained.map(s => (
                          <span key={s} className="text-[10px] bg-white/10 text-white/80 px-2 py-1 rounded tracking-wide">

@@ -21,7 +21,7 @@ export default function CaseStudyShineora() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16">
           <div className="max-w-2xl">
             <span className="text-primary font-mono tracking-widest text-sm uppercase mb-4 block">Case Study 01</span>
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-white">Shineora</h2>
+            <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tighter mb-6 text-white">Shineora</h2>
             <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed">
               A premium e-commerce platform redefining how fashion jewellery is explored and purchased online. Built to solve critical UX friction points and deliver sub-second page loads, significantly boosting mobile conversion rates.
             </p>
@@ -61,7 +61,7 @@ export default function CaseStudyShineora() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-border/20 py-12 mb-24">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 border-y border-border/20 py-12 mb-24">
           {[
             { label: "Scale", value: "128+ Products" },
             { label: "Platform", value: "Responsive E-commerce" },

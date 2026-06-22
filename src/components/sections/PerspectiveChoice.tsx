@@ -51,7 +51,7 @@ export default function PerspectiveChoice() {
               layoutId={`card-container-${item.id}`}
               key={item.id}
               onClick={() => setSelectedId(item.id)}
-              className="bg-[#111] hover:bg-[#151515] border border-white/5 hover:border-white/20 rounded-[2rem] p-8 md:p-10 cursor-pointer transition-colors group flex flex-col items-center text-center relative overflow-hidden h-[400px] md:h-[450px]"
+              className="bg-[#111] hover:bg-[#151515] border border-white/5 hover:border-white/20 rounded-[2rem] p-8 md:p-10 cursor-pointer transition-colors group flex flex-col items-center text-center relative overflow-hidden h-[320px] md:h-[450px]"
             >
               <div className={`absolute inset-0 bg-gradient-to-b ${item.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
               
@@ -100,7 +100,7 @@ export default function PerspectiveChoice() {
                       <motion.div layoutId={`icon-${item.id}`}>
                         {item.icon}
                       </motion.div>
-                      <motion.h3 layoutId={`title-${item.id}`} className="text-5xl font-bold text-white mb-4 tracking-tight">
+                      <motion.h3 layoutId={`title-${item.id}`} className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
                         {item.title}
                       </motion.h3>
                       <motion.p layoutId={`subtitle-${item.id}`} className="text-primary font-mono text-xs uppercase tracking-widest">

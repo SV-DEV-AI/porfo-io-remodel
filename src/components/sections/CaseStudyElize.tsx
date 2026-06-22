@@ -40,7 +40,7 @@ export default function CaseStudyElize() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-white/10 py-12 mb-24">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 border-y border-white/10 py-12 mb-24">
           {[
             { label: "Product", value: "AI Academic Assistant" },
             { label: "Platform", value: "Telegram Integration" },
@@ -58,7 +58,7 @@ export default function CaseStudyElize() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-24">
           
           {/* Chat Interface Placeholder */}
-          <motion.div className="lg:col-span-4 h-full bg-gradient-to-br from-blue-900/10 to-[#0B0B0B] border border-blue-500/10 rounded-3xl overflow-hidden relative flex flex-col items-center justify-center shadow-2xl group min-h-[400px]">
+          <motion.div className="lg:col-span-4 h-full bg-gradient-to-br from-blue-900/10 to-[#0B0B0B] border border-blue-500/10 rounded-3xl overflow-hidden relative flex flex-col items-center justify-center shadow-2xl group min-h-[250px] md:min-h-[400px]">
             <MessageSquare className="w-12 h-12 text-blue-500/20 mb-4 group-hover:scale-110 transition-transform duration-500" />
             <p className="text-blue-500/50 font-mono text-xs uppercase tracking-widest relative z-10">Telegram Chat Interface</p>
           </motion.div>
