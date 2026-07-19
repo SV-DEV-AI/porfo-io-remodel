@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Award, Cloud, Cpu, Code, Briefcase } from "lucide-react";
+import TiltCard from "@/components/ui/TiltCard";
 
 const allCredentials = [
   {
@@ -93,42 +94,42 @@ export default function Certifications() {
 
           <div className="md:w-2/3">
              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-               {allCredentials.map((cred, i) => (
+                {allCredentials.map((cred, i) => (
                  <motion.div 
                    initial={{ opacity: 0, y: 20 }}
                    whileInView={{ opacity: 1, y: 0 }}
                    transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
                    viewport={{ once: true }}
                    key={cred.title + cred.issuer} 
-                   className="bg-[#111] p-8 rounded-3xl border border-white/5 hover:border-white/20 transition-all duration-500 group relative overflow-hidden flex flex-col h-[280px]"
                  >
-                   <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-500"></div>
-                   
-                   <div className="flex justify-between items-start mb-auto">
-                     <div className="p-3 bg-white/5 rounded-2xl">
-                       {cred.icon}
+                   <TiltCard className="bg-[#111] p-8 rounded-3xl border border-white/5 hover:border-white/20 transition-all duration-500 group relative overflow-hidden flex flex-col h-[280px] w-full block">
+                     <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-500"></div>
+                     
+                     <div className="flex justify-between items-start mb-auto">
+                       <div className="p-3 bg-white/5 rounded-2xl">
+                         {cred.icon}
+                       </div>
+                       <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest bg-white/5 px-3 py-1 rounded-full">
+                         {cred.category}
+                       </span>
                      </div>
-                     <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest bg-white/5 px-3 py-1 rounded-full">
-                       {cred.category}
-                     </span>
-                   </div>
 
-                   <div className="transform group-hover:-translate-y-12 transition-transform duration-500 ease-out">
-                     <span className="text-primary text-xs font-mono uppercase tracking-widest block mb-2">{cred.issuer} • {cred.date}</span>
-                     <h4 className="text-xl font-medium text-white leading-snug">{cred.title}</h4>
-                   </div>
-
-                   {/* Hover Reveal Content */}
-                   <div className="absolute bottom-8 left-8 right-8 opacity-100 md:opacity-0 group-hover:opacity-100 translate-y-0 md:translate-y-8 group-hover:translate-y-0 transition-all duration-500 ease-out delay-100">
-                     <div className="pt-4 border-t border-white/10 flex flex-wrap gap-2">
-                       {cred.skillsGained.map(s => (
-                         <span key={s} className="text-[10px] bg-white/10 text-white/80 px-2 py-1 rounded tracking-wide">
-                           {s}
-                         </span>
-                       ))}
+                     <div className="transform group-hover:-translate-y-12 transition-transform duration-500 ease-out mt-8">
+                       <span className="text-primary text-xs font-mono uppercase tracking-widest block mb-2">{cred.issuer} • {cred.date}</span>
+                       <h4 className="text-xl font-medium text-white leading-snug">{cred.title}</h4>
                      </div>
-                   </div>
 
+                     {/* Hover Reveal Content */}
+                     <div className="absolute bottom-8 left-8 right-8 opacity-100 md:opacity-0 group-hover:opacity-100 translate-y-0 md:translate-y-8 group-hover:translate-y-0 transition-all duration-500 ease-out delay-100">
+                       <div className="pt-4 border-t border-white/10 flex flex-wrap gap-2">
+                         {cred.skillsGained.map(s => (
+                           <span key={s} className="text-[10px] bg-white/10 text-white/80 px-2 py-1 rounded tracking-wide">
+                             {s}
+                           </span>
+                         ))}
+                       </div>
+                     </div>
+                   </TiltCard>
                  </motion.div>
                ))}
              </div>

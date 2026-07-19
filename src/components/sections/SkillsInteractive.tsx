@@ -110,42 +110,38 @@ export default function SkillsInteractive() {
                   </motion.div>
                 </button>
 
-                <AnimatePresence initial={false}>
-                  {isActive && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.5, ease: "easeOut" as const }}
-                    >
-                      <div className="px-6 md:px-8 pb-8 pt-2 flex flex-col md:flex-row gap-8 md:gap-16">
-                        <div className="md:w-1/3">
-                           <p className="text-muted-foreground font-light leading-relaxed">{category.description}</p>
+                <motion.div
+                  initial={false}
+                  animate={{ height: isActive ? "auto" : 0, opacity: isActive ? 1 : 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" as const }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 md:px-8 pb-8 pt-2 flex flex-col md:flex-row gap-8 md:gap-16">
+                    <div className="md:w-1/3">
+                       <p className="text-muted-foreground font-light leading-relaxed">{category.description}</p>
+                    </div>
+                    <div className="md:w-2/3 flex flex-wrap gap-4">
+                      {category.skills.map((skill) => (
+                        <div 
+                          key={skill.name} 
+                          className="group relative px-5 py-3 rounded-2xl border border-white/10 bg-[#1A1A1A] hover:bg-[#222] hover:border-white/20 transition-all cursor-default"
+                        >
+                          <div className="text-white text-sm font-medium tracking-wide mb-1">
+                            {skill.name}
+                          </div>
+                          <div className="flex flex-wrap gap-2 mt-2 opacity-60 group-hover:opacity-100 transition-opacity">
+                            <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Used In:</span>
+                            {skill.projects.map(p => (
+                              <span key={p} className="text-[10px] text-primary bg-primary/10 px-2 py-0.5 rounded">
+                                {p}
+                              </span>
+                            ))}
+                          </div>
                         </div>
-                        <div className="md:w-2/3 flex flex-wrap gap-4">
-                          {category.skills.map((skill) => (
-                            <div 
-                              key={skill.name} 
-                              className="group relative px-5 py-3 rounded-2xl border border-white/10 bg-[#1A1A1A] hover:bg-[#222] hover:border-white/20 transition-all cursor-default"
-                            >
-                              <div className="text-white text-sm font-medium tracking-wide mb-1">
-                                {skill.name}
-                              </div>
-                              <div className="flex flex-wrap gap-2 mt-2 opacity-60 group-hover:opacity-100 transition-opacity">
-                                <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Used In:</span>
-                                {skill.projects.map(p => (
-                                  <span key={p} className="text-[10px] text-primary bg-primary/10 px-2 py-0.5 rounded">
-                                    {p}
-                                  </span>
-                                ))}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             );
           })}

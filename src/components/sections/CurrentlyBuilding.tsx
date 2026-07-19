@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { Activity } from "lucide-react";
 
 const currentFocus = [
-  "Shineora V2",
-  "AI Shopping Assistant",
-  "Elize Automation Platform"
+  "Shineora V2 (Beta Q3)",
+  "AI Shopping Assistant (Prototyping)",
+  "Elize Platform (Active)"
 ];
 
 export default function CurrentlyBuilding() {

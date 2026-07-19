@@ -15,7 +15,8 @@ const timelineData = [
       lessons: "Mastered DOM manipulation, vanilla JS, and CSS layouts without relying on abstractions.",
       milestone: "Built my first full-stack student portal.",
       achievement: "Developed a core problem-solving mindset."
-    }
+    },
+    linkText: "See the Fundamentals"
   },
   {
     id: "phase2",
@@ -27,7 +28,8 @@ const timelineData = [
       lessons: "Learned the importance of decoupling state, headless APIs, and edge deployment.",
       milestone: "Deployed Shineora, a high-performance Next.js store.",
       achievement: "Engineered sub-second page loads for real users."
-    }
+    },
+    linkText: "See Production Engineering"
   },
   {
     id: "phase3",
@@ -39,7 +41,8 @@ const timelineData = [
       lessons: "Prompt engineering is just the start; orchestrating LLMs into stateful agents is the real challenge.",
       milestone: "Engineered Elize using n8n and Telegram APIs.",
       achievement: "Built a 24/7 autonomous academic assistant."
-    }
+    },
+    linkText: "See AI & Automation"
   },
   {
     id: "phase4",
@@ -51,7 +54,8 @@ const timelineData = [
       lessons: "Diving into complex data structures, autonomous swarms, and scalable backend design.",
       milestone: "Exploring new paradigms in software architecture.",
       achievement: "Building software that matters."
-    }
+    },
+    linkText: "See the Horizon"
   },
 ];
 
@@ -113,7 +117,8 @@ interface TimelineItemType {
     lessons: string;
     milestone: string;
     achievement: string;
-  }
+  };
+  linkText: string;
 }
 
 function TimelineItem({ item, isEven, isExpanded, onClick }: { item: TimelineItemType; isEven: boolean; isExpanded: boolean; onClick: () => void }) {
@@ -184,7 +189,7 @@ function TimelineItem({ item, isEven, isExpanded, onClick }: { item: TimelineIte
           </AnimatePresence>
 
           <div className="mt-6 flex items-center gap-2 text-xs font-mono text-muted-foreground uppercase tracking-wider group-hover:text-primary transition-colors">
-             {isExpanded ? "Close Chapter" : "Explore Chapter"}
+             {isExpanded ? "Close Chapter" : item.linkText}
              <ChevronRight className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? "rotate-90" : "group-hover:translate-x-1"}`} />
           </div>
 

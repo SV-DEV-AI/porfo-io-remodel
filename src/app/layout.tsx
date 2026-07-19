@@ -15,7 +15,33 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Sarthak Verma | Software Engineer & AI Builder",
-  description: "Portfolio of Sarthak Verma. Building digital experiences, automation systems, and AI-powered products.",
+  description: "Sarthak Verma — CS student building production e-commerce platforms and AI automation systems. Creator of Shineora and Elize AI.",
+  metadataBase: new URL("https://sarthak.foo"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Sarthak Verma | Software Engineer & AI Builder",
+    description: "Sarthak Verma — CS student building production e-commerce platforms and AI automation systems. Creator of Shineora and Elize AI.",
+    url: "https://sarthak.foo",
+    siteName: "Sarthak Verma",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Sarthak Verma Portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sarthak Verma | Software Engineer & AI Builder",
+    description: "Sarthak Verma — CS student building production e-commerce platforms and AI automation systems. Creator of Shineora and Elize AI.",
+    images: ["/og-image.png"],
+  },
 };
 
 export const viewport: Viewport = {
@@ -30,6 +56,7 @@ import ModeSwitcher from "@/components/ModeSwitcher";
 import EasterEggs from "@/components/EasterEggs";
 import MiniAIAssistant from "@/components/MiniAIAssistant";
 import ScrollToTop from "@/components/ScrollToTop";
+import ScrollProgress from "@/components/ui/ScrollProgress";
 
 export default function RootLayout({
   children,
@@ -43,6 +70,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col relative pb-24">
         <ModeProvider>
+          <ScrollProgress />
           <SmoothScrolling>{children}</SmoothScrolling>
           <ModeSwitcher />
           <EasterEggs />

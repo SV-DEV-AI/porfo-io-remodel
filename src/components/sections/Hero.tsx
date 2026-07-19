@@ -39,14 +39,33 @@ export default function Hero() {
           <span className="px-4 py-1.5 rounded-full border border-border/50 bg-secondary/30 backdrop-blur-md">Computer Science Student</span>
         </motion.div>
 
-        <motion.h1
-          variants={itemVariants}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 text-foreground"
-        >
-          Sarthak Verma
-        </motion.h1>
+        <div className="overflow-hidden mb-6 flex justify-center">
+          <motion.h1
+            variants={itemVariants}
+            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-foreground flex"
+          >
+            {"Sarthak Verma".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0, y: 50, rotateX: -90 }}
+                animate={{ opacity: 1, y: 0, rotateX: 0 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.5 + index * 0.05,
+                  ease: [0.2, 0.65, 0.3, 0.9],
+                }}
+                className={char === " " ? "w-4 md:w-6" : ""}
+              >
+                {char}
+              </motion.span>
+            ))}
+          </motion.h1>
+        </div>
 
         <motion.div variants={itemVariants} className="flex flex-col items-center gap-4">
+          <p className="text-xl md:text-2xl font-semibold text-white tracking-wide">
+            I ship production systems, not prototypes.
+          </p>
           <p className="max-w-3xl text-base md:text-xl lg:text-2xl text-muted-foreground font-light leading-relaxed">
             Building AI-powered applications, e-commerce platforms,<br className="hidden md:block"/> and automation systems.
           </p>

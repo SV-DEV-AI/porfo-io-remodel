@@ -7,6 +7,27 @@ import { Code2, ChevronRight, Terminal } from "lucide-react";
 export default function LeetCodeExperience() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [solvedCount, setSolvedCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    const fetchLeetCodeData = async () => {
+      try {
+        const response = await fetch("https://alfa-leetcode-api.onrender.com/sarthakv2005/solved");
+        if (!response.ok) throw new Error("API failed");
+        const data = await response.json();
+        if (data.solvedProblem) {
+          setSolvedCount(data.solvedProblem);
+        } else {
+          setSolvedCount(127);
+        }
+      } catch (error) {
+        console.error("Failed to fetch LeetCode data", error);
+        setSolvedCount(127); // Fallback
+      }
+    };
+
+    fetchLeetCodeData();
+  }, []);
 
   return (
     <section className="w-full bg-[#050505] text-foreground py-24 md:py-32 relative overflow-hidden border-t border-white/5">
@@ -30,7 +51,11 @@ export default function LeetCodeExperience() {
             <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 blur-[50px] rounded-full"></div>
             <span className="text-muted-foreground font-mono uppercase tracking-widest text-xs mb-4 block">Problems Solved</span>
             <div className="flex items-baseline gap-2 mb-2">
-              <Counter value={120} active={isInView} />
+              {solvedCount !== null ? (
+                <Counter value={solvedCount} active={isInView} />
+              ) : (
+                <span className="text-5xl md:text-8xl font-bold text-white tracking-tighter tabular-nums">0</span>
+              )}
               <span className="text-green-400 font-bold text-4xl">+</span>
             </div>
             <p className="text-sm text-muted-foreground font-light leading-relaxed">
@@ -73,17 +98,22 @@ function Counter({ value, active }: { value: number; active: boolean }) {
 
   useEffect(() => {
     if (!active) return;
+    if (value === 0) return;
     
     let start = 0;
     const end = value;
     const duration = 2000;
-    const incrementTime = (duration / end);
+    const incrementTime = Math.max(10, duration / end);
 
     const timer = setInterval(() => {
-      start += 1;
-      setCount(start);
-      if (start === end) clearInterval(timer);
-    }, incrementTime);
+      start += Math.ceil(end / (duration / 10)); // increment by step
+      if (start >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(start);
+      }
+    }, 10);
 
     return () => clearInterval(timer);
   }, [value, active]);

@@ -121,65 +121,46 @@ const buildStages = [
   }
 ];
 
-import { useState } from "react";
-import { AnimatePresence } from "framer-motion";
-import { ChevronRight } from "lucide-react";
+
 
 function BuildExplorer() {
-  const [activeStage, setActiveStage] = useState(buildStages[0].id);
+  const targetRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
 
-  const activeData = buildStages.find(s => s.id === activeStage)!;
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-24">
-      {/* Navigation */}
-      <div className="flex flex-col gap-2">
-        {buildStages.map((stage) => {
-          const isActive = activeStage === stage.id;
-          return (
-            <button
-              key={stage.id}
-              onClick={() => setActiveStage(stage.id)}
-              className={`text-left flex items-center justify-between p-4 rounded-xl transition-all duration-300 ${
-                isActive 
-                  ? "bg-white/10 text-white shadow-[0_0_20px_rgba(255,255,255,0.05)]" 
-                  : "text-muted-foreground hover:bg-white/5 hover:text-white"
-              }`}
-            >
-              <span className="font-mono text-sm tracking-widest">{stage.title}</span>
-              {isActive && <ChevronRight className="w-4 h-4" />}
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Content Area */}
-      <div className="lg:col-span-2 relative min-h-[300px] bg-[#1A1A1A] rounded-[2rem] border border-white/5 p-8 md:p-12 overflow-hidden flex flex-col justify-center">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
-        
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeData.id}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative z-10"
-          >
-            <h4 className="text-2xl md:text-4xl font-semibold text-white mb-6 tracking-tight">{activeData.title.split(". ")[1]}</h4>
-            <p className="text-muted-foreground text-lg md:text-xl font-light leading-relaxed mb-10">
-              {activeData.content}
-            </p>
-            
-            <div className="flex flex-wrap gap-3">
-              {activeData.tech.map(t => (
-                <span key={t} className="px-4 py-2 rounded-full bg-[#222] border border-white/10 text-xs font-mono uppercase tracking-widest text-white/80">
-                  {t}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        </AnimatePresence>
+    <div ref={targetRef} className="relative h-[300vh]">
+      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+        <motion.div style={{ x }} className="flex gap-12 px-6 md:px-12">
+          {buildStages.map((stage) => {
+            return (
+              <div 
+                key={stage.id} 
+                className="w-[85vw] md:w-[60vw] lg:w-[40vw] flex-shrink-0 relative min-h-[400px] bg-[#1A1A1A] rounded-[2rem] border border-white/5 p-8 md:p-12 flex flex-col justify-center"
+              >
+                <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
+                <div className="relative z-10">
+                  <span className="font-mono text-sm tracking-widest text-muted-foreground mb-4 block">{stage.title}</span>
+                  <h4 className="text-2xl md:text-4xl font-semibold text-white mb-6 tracking-tight">{stage.title.split(". ")[1]}</h4>
+                  <p className="text-muted-foreground text-lg md:text-xl font-light leading-relaxed mb-10">
+                    {stage.content}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-3">
+                    {stage.tech.map(t => (
+                      <span key={t} className="px-4 py-2 rounded-full bg-[#222] border border-white/10 text-xs font-mono uppercase tracking-widest text-white/80">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </motion.div>
       </div>
     </div>
   );
