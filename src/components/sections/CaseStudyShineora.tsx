@@ -15,7 +15,7 @@ export default function CaseStudyShineora() {
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.9, 1]);
 
   return (
-    <section id="shineora-metrics" ref={containerRef} className="w-full bg-[#111111] text-foreground py-24 md:py-32 rounded-[2rem] md:rounded-[3rem] overflow-hidden relative z-10 border-t border-border/10 shadow-[0_-40px_100px_rgba(0,0,0,0.5)]">
+    <section id="shineora-metrics" ref={containerRef} className="w-full bg-[#111111] text-foreground py-24 md:py-32 rounded-[2rem] md:rounded-[3rem] relative z-10 border-t border-border/10 shadow-[0_-40px_100px_rgba(0,0,0,0.5)]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16">
@@ -123,13 +123,22 @@ const buildStages = [
 
 
 
+import { useSpring } from "framer-motion";
+
 function BuildExplorer() {
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
+    offset: ["start start", "end end"]
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 20,
+    restDelta: 0.001
+  });
+
+  const x = useTransform(smoothProgress, [0, 1], ["0%", "-80%"]);
 
   return (
     <div ref={targetRef} className="relative h-[300vh]">

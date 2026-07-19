@@ -77,7 +77,7 @@ function NetworkIcon({ className }: { className?: string }) {
 
 export default function Certifications() {
   return (
-    <section className="w-full bg-[#080808] text-foreground py-24 md:py-32 relative overflow-hidden border-t border-white/5">
+    <section className="w-full bg-[#080808] text-foreground py-24 md:py-32 relative border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         <div className="flex flex-col md:flex-row gap-8 md:gap-24">
