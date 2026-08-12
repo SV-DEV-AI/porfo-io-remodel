@@ -48,34 +48,34 @@
 }
 
 :root {
-  /* Luxury Dark Theme Default */
-  --background: #0B0B0B;
-  --background-secondary: #050505;
-  --foreground: #FFFFFF;
-  --surface: #111111;
-  --surface-elevated: #151515;
-  --surface-hover: #1A1A1A;
-  --card: #111111;
-  --card-foreground: #FFFFFF;
-  --popover: #111111;
-  --popover-foreground: #FFFFFF;
-  --primary: #D4AF37;
+  /* Vibrant Navy & Gold Theme */
+  --background: #050a1f;
+  --background-secondary: #02040f;
+  --foreground: #ffffff;
+  --surface: #0a1128;
+  --surface-elevated: #111936;
+  --surface-hover: #182346;
+  --card: #0a1128;
+  --card-foreground: #ffffff;
+  --popover: #0a1128;
+  --popover-foreground: #ffffff;
+  --primary: #d4af37;
   --primary-foreground: #000000;
-  --secondary: #1A1A1A;
-  --secondary-foreground: #FFFFFF;
-  --muted: #1A1A1A;
-  --muted-foreground: #A1A1AA;
-  --accent: #D4AF37;
+  --secondary: #111936;
+  --secondary-foreground: #ffffff;
+  --muted: #111936;
+  --muted-foreground: #94a3b8;
+  --accent: #d4af37;
   --accent-foreground: #000000;
-  --destructive: #7F1D1D;
-  --border: #27272A;
-  --border-hover: #3F3F46;
-  --input: #27272A;
-  --ring: #D4AF37;
-  --accent-blue: #3B82F6;
-  --status-success: #22C55E;
-  --accent-purple: #A855F7;
-  --accent-amber: #F59E0B;
+  --destructive: #7f1d1d;
+  --border: #1e293b;
+  --border-hover: #334155;
+  --input: #1e293b;
+  --ring: #d4af37;
+  --accent-blue: #3b82f6;
+  --status-success: #22c55e;
+  --accent-purple: #a855f7;
+  --accent-amber: #f59e0b;
   --radius: 0.5rem;
 }
 

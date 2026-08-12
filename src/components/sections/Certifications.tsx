@@ -114,19 +114,21 @@ export default function Certifications() {
                        </span>
                      </div>
 
-                     <div className="transform group-hover:-translate-y-12 transition-transform duration-500 ease-out mt-8">
-                       <span className="text-primary text-xs font-mono uppercase tracking-widest block mb-2">{cred.issuer} • {cred.date}</span>
-                       <h4 className="text-xl font-medium text-white leading-snug">{cred.title}</h4>
-                     </div>
+                     <div className="relative mt-auto pt-8">
+                       <div className="transform md:group-hover:-translate-y-[4.5rem] transition-transform duration-500 ease-out">
+                         <span className="text-primary text-xs font-mono uppercase tracking-widest block mb-2">{cred.issuer} • {cred.date}</span>
+                         <h4 className="text-xl font-medium text-white leading-snug">{cred.title}</h4>
+                       </div>
 
-                     {/* Hover Reveal Content */}
-                     <div className="absolute bottom-8 left-8 right-8 opacity-100 md:opacity-0 group-hover:opacity-100 translate-y-0 md:translate-y-8 group-hover:translate-y-0 transition-all duration-500 ease-out delay-100">
-                       <div className="pt-4 border-t border-white/10 flex flex-wrap gap-2">
-                         {cred.skillsGained.map(s => (
-                           <span key={s} className="text-[10px] bg-white/10 text-white/80 px-2 py-1 rounded tracking-wide">
-                             {s}
-                           </span>
-                         ))}
+                       {/* Hover Reveal Content */}
+                       <div className="absolute bottom-0 left-0 right-0 opacity-100 md:opacity-0 group-hover:opacity-100 translate-y-0 md:translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out delay-100">
+                         <div className="pt-4 border-t border-white/10 flex flex-wrap gap-2">
+                           {cred.skillsGained.map(s => (
+                             <span key={s} className="text-[10px] bg-white/10 text-white/80 px-2 py-1 rounded tracking-wide">
+                               {s}
+                             </span>
+                           ))}
+                         </div>
                        </div>
                      </div>
                    </TiltCard>
