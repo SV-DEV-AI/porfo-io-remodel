@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 import { GitBranch, ShoppingBag, ArrowUpRight } from "lucide-react";
 
 export default function CaseStudyShineora() {
@@ -15,7 +16,7 @@ export default function CaseStudyShineora() {
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.9, 1]);
 
   return (
-    <section id="shineora-metrics" ref={containerRef} className="w-full bg-[#111111] text-foreground py-24 md:py-32 rounded-[2rem] md:rounded-[3rem] relative z-10 border-t border-border/10 shadow-[0_-40px_100px_rgba(0,0,0,0.5)]">
+    <section id="shineora-metrics" ref={containerRef} className="w-full bg-background text-foreground py-24 md:py-32 rounded-[2rem] md:rounded-[3rem] relative z-10 border-t border-border/10 shadow-2xl">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16">
@@ -27,11 +28,11 @@ export default function CaseStudyShineora() {
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
-            <a href="https://www.shineora.in/" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-black hover:bg-white/90 transition-colors text-sm font-semibold">
+            <a href="https://www.shineora.in/" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-8 py-3.5 rounded-full bg-foreground text-background hover:bg-foreground/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors text-sm font-semibold">
               <span>Visit Platform</span>
               <ArrowUpRight className="w-4 h-4" />
             </a>
-            <a href="https://github.com/SV-DEV-AI/shineora.in" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-6 py-3.5 rounded-full border border-border/50 bg-[#1A1A1A] hover:bg-[#222222] transition-colors text-sm font-medium">
+            <a href="https://github.com/SV-DEV-AI/shineora.in" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-6 py-3.5 rounded-full border border-border/50 bg-surface hover:bg-surface-elevated focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors text-sm font-medium">
               <GitBranch className="w-4 h-4" />
               <span>Source</span>
             </a>
@@ -41,20 +42,25 @@ export default function CaseStudyShineora() {
         {/* Hero Visual Framework */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-24">
           
-          <motion.div style={{ scale }} className="md:col-span-8 aspect-[16/10] bg-gradient-to-br from-[#1A1A1A] to-[#0B0B0B] border border-border/20 rounded-3xl overflow-hidden relative flex flex-col items-center justify-center shadow-2xl group">
-            <ShoppingBag className="w-16 h-16 text-primary/20 mb-4 group-hover:scale-110 transition-transform duration-500" />
-            <div className="absolute inset-0 bg-white/5 opacity-20 mix-blend-overlay bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent"></div>
-            <p className="text-muted-foreground/50 font-mono text-xs uppercase tracking-widest relative z-10">Homepage & Product Catalog</p>
+          <motion.div style={{ scale }} className="md:col-span-8 aspect-[16/10] bg-surface border border-border/20 rounded-3xl overflow-hidden relative flex flex-col items-center justify-center shadow-2xl group">
+            <Image src="/images/case-studies/shineora-hero.png" alt="Shineora Homepage" fill className="object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500 z-10 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100">
+              <p className="text-white font-mono text-xs uppercase tracking-widest">Homepage & Product Catalog</p>
+            </div>
           </motion.div>
 
           <div className="md:col-span-4 flex flex-col gap-6">
-             <motion.div style={{ scale }} className="h-full bg-gradient-to-br from-[#1A1A1A] to-[#0B0B0B] border border-border/20 rounded-3xl overflow-hidden relative flex flex-col items-center justify-center shadow-2xl group">
-                <div className="absolute inset-0 bg-white/5 opacity-20 mix-blend-overlay bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent"></div>
-                <p className="text-muted-foreground/50 font-mono text-xs uppercase tracking-widest relative z-10">Checkout Flow</p>
+             <motion.div style={{ scale }} className="h-full bg-surface border border-border/20 rounded-3xl overflow-hidden relative flex flex-col items-center justify-center shadow-2xl group min-h-[200px]">
+                <Image src="/images/case-studies/shineora-products.png" alt="Shineora Checkout Flow" fill className="object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500 z-10 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100">
+                  <p className="text-white font-mono text-xs uppercase tracking-widest">Checkout Flow</p>
+                </div>
              </motion.div>
-             <motion.div style={{ scale }} className="h-full bg-gradient-to-br from-[#1A1A1A] to-[#0B0B0B] border border-border/20 rounded-3xl overflow-hidden relative flex flex-col items-center justify-center shadow-2xl group">
-                <div className="absolute inset-0 bg-white/5 opacity-20 mix-blend-overlay bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent"></div>
-                <p className="text-muted-foreground/50 font-mono text-xs uppercase tracking-widest relative z-10">Mobile View</p>
+             <motion.div style={{ scale }} className="h-full bg-surface border border-border/20 rounded-3xl overflow-hidden relative flex flex-col items-center justify-center shadow-2xl group min-h-[200px]">
+                <Image src="/images/case-studies/shineora-bridal.png" alt="Shineora Mobile View" fill className="object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500 z-10 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100">
+                  <p className="text-white font-mono text-xs uppercase tracking-widest">Mobile View</p>
+                </div>
              </motion.div>
           </div>
 
@@ -148,19 +154,19 @@ function BuildExplorer() {
             return (
               <div 
                 key={stage.id} 
-                className="w-[85vw] md:w-[60vw] lg:w-[40vw] flex-shrink-0 relative min-h-[400px] bg-[#1A1A1A] rounded-[2rem] border border-white/5 p-8 md:p-12 flex flex-col justify-center"
+                className="w-[85vw] md:w-[60vw] lg:w-[40vw] flex-shrink-0 relative min-h-[400px] bg-surface rounded-[2rem] border border-border/10 p-8 md:p-12 flex flex-col justify-center"
               >
                 <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
                 <div className="relative z-10">
                   <span className="font-mono text-sm tracking-widest text-muted-foreground mb-4 block">{stage.title}</span>
-                  <h4 className="text-2xl md:text-4xl font-semibold text-white mb-6 tracking-tight">{stage.title.split(". ")[1]}</h4>
+                  <h4 className="text-2xl md:text-4xl font-semibold text-foreground mb-6 tracking-tight">{stage.title.split(". ")[1]}</h4>
                   <p className="text-muted-foreground text-lg md:text-xl font-light leading-relaxed mb-10">
                     {stage.content}
                   </p>
                   
                   <div className="flex flex-wrap gap-3">
                     {stage.tech.map(t => (
-                      <span key={t} className="px-4 py-2 rounded-full bg-[#222] border border-white/10 text-xs font-mono uppercase tracking-widest text-white/80">
+                      <span key={t} className="px-4 py-2 rounded-full bg-surface-elevated border border-border/10 text-xs font-mono uppercase tracking-widest text-muted-foreground">
                         {t}
                       </span>
                     ))}

@@ -70,7 +70,7 @@ export default function SkillsInteractive() {
   const [activeId, setActiveId] = useState<string | null>(skillsData[0].id);
 
   return (
-    <section id="tech-stack" className="w-full bg-[#0B0B0B] text-foreground py-24 md:py-32 relative overflow-hidden">
+    <section id="tech-stack" className="w-full bg-background text-foreground py-24 md:py-32 relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10">
         
         <div className="text-center mb-16">
@@ -85,7 +85,7 @@ export default function SkillsInteractive() {
             return (
               <div 
                 key={category.id} 
-                className={`border rounded-3xl overflow-hidden transition-colors duration-500 ${isActive ? 'bg-[#111111] border-white/20' : 'bg-transparent border-white/5 hover:border-white/10'}`}
+                className={`border rounded-3xl overflow-hidden transition-colors duration-500 ${isActive ? 'bg-surface border-white/20' : 'bg-transparent border-white/5 hover:border-white/10'}`}
               >
                 <button
                   onClick={() => setActiveId(isActive ? null : category.id)}
@@ -124,7 +124,7 @@ export default function SkillsInteractive() {
                       {category.skills.map((skill) => (
                         <div 
                           key={skill.name} 
-                          className="group relative px-5 py-3 rounded-2xl border border-white/10 bg-[#1A1A1A] hover:bg-[#222] hover:border-white/20 transition-all cursor-default"
+                          className="group relative px-5 py-3 rounded-2xl border border-white/10 bg-surface hover:bg-surface-elevated hover:border-white/20 transition-all cursor-default"
                         >
                           <div className="text-white text-sm font-medium tracking-wide mb-1">
                             {skill.name}

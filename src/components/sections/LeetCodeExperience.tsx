@@ -30,14 +30,14 @@ export default function LeetCodeExperience() {
   }, []);
 
   return (
-    <section className="w-full bg-[#050505] text-foreground py-24 md:py-32 relative overflow-hidden border-t border-white/5">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-500/5 via-[#050505] to-[#050505] pointer-events-none"></div>
+    <section className="w-full bg-background text-foreground py-24 md:py-32 relative overflow-hidden border-t border-white/5">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-status-success/5 via-background to-background pointer-events-none"></div>
 
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10" ref={ref}>
         
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center p-3 bg-green-500/10 rounded-2xl mb-6 border border-green-500/20">
-             <Code2 className="w-8 h-8 text-green-400" />
+          <div className="inline-flex items-center justify-center p-3 bg-status-success/10 rounded-2xl mb-6 border border-green-500/20">
+             <Code2 className="w-8 h-8 text-status-success" />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">The Algorithm<br />Journey.</h2>
           <p className="text-muted-foreground text-lg md:text-xl font-light max-w-2xl mx-auto">
@@ -47,8 +47,8 @@ export default function LeetCodeExperience() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          <div className="md:col-span-1 bg-[#111] border border-white/5 p-8 rounded-3xl relative overflow-hidden flex flex-col justify-center min-h-[300px]">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 blur-[50px] rounded-full"></div>
+          <div className="md:col-span-1 bg-surface border border-white/5 p-8 rounded-3xl relative overflow-hidden flex flex-col justify-center min-h-[300px]">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-status-success/10 blur-[50px] rounded-full"></div>
             <span className="text-muted-foreground font-mono uppercase tracking-widest text-xs mb-4 block">Problems Solved</span>
             <div className="flex items-baseline gap-2 mb-2">
               {solvedCount !== null ? (
@@ -56,14 +56,14 @@ export default function LeetCodeExperience() {
               ) : (
                 <span className="text-5xl md:text-8xl font-bold text-white tracking-tighter tabular-nums">0</span>
               )}
-              <span className="text-green-400 font-bold text-4xl">+</span>
+              <span className="text-status-success font-bold text-4xl">+</span>
             </div>
             <p className="text-sm text-muted-foreground font-light leading-relaxed">
               Consistently challenging myself with algorithmic puzzles to maintain sharp problem-solving capabilities.
             </p>
           </div>
 
-          <div className="md:col-span-2 bg-[#1A1A1A] border border-white/5 p-8 rounded-3xl relative flex flex-col justify-between group overflow-hidden min-h-[300px]">
+          <div className="md:col-span-2 bg-surface border border-white/5 p-8 rounded-3xl relative flex flex-col justify-between group overflow-hidden min-h-[300px]">
             <div className="absolute top-0 right-0 p-8 text-white/5 group-hover:text-white/10 transition-colors">
               <Terminal className="w-32 h-32" />
             </div>
@@ -71,7 +71,7 @@ export default function LeetCodeExperience() {
               <span className="text-muted-foreground font-mono uppercase tracking-widest text-xs mb-6 block">Core Topics & Focus</span>
               <div className="flex flex-wrap gap-3 mb-8">
                 {["Graphs", "Dynamic Programming", "Trees", "Backtracking", "Greedy"].map(topic => (
-                  <span key={topic} className="px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium">
+                  <span key={topic} className="px-4 py-2 rounded-full bg-status-success/10 border border-green-500/20 text-status-success text-sm font-medium">
                     {topic}
                   </span>
                 ))}
@@ -81,7 +81,7 @@ export default function LeetCodeExperience() {
               </p>
             </div>
             
-            <a href="https://leetcode.com/u/sarthakv2005/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 mt-8 text-green-400 font-mono text-sm uppercase tracking-widest group-hover:gap-4 transition-all">
+            <a href="https://leetcode.com/u/sarthakv2005/" target="_blank" rel="noreferrer" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center gap-2 mt-8 text-status-success font-mono text-sm uppercase tracking-widest group-hover:gap-4 transition-all">
               View Profile <ChevronRight className="w-4 h-4" />
             </a>
           </div>

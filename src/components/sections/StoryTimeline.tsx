@@ -144,7 +144,7 @@ function TimelineItem({ item, isEven, isExpanded, onClick }: { item: TimelineIte
         <motion.div 
           layout
           onClick={onClick}
-          className="bg-[#111] border border-white/5 hover:border-white/20 p-8 md:p-10 rounded-3xl cursor-pointer w-full transition-colors relative overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)]"
+          className="bg-surface border border-white/5 hover:border-white/20 p-8 md:p-10 rounded-3xl cursor-pointer w-full transition-colors relative overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)]"
         >
           {/* Hover Gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -198,7 +198,7 @@ function TimelineItem({ item, isEven, isExpanded, onClick }: { item: TimelineIte
       </div>
       
       {/* Center dot */}
-      <div className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-[#111] border-2 border-primary -translate-x-1/2 mt-8 md:mt-12 z-20 transition-transform duration-300 group-hover:scale-150 group-hover:bg-primary shadow-[0_0_15px_rgba(var(--primary),0.5)]" />
+      <div className="absolute left-6 md:left-1/2 w-4 h-4 rounded-full bg-surface border-2 border-primary -translate-x-1/2 mt-8 md:mt-12 z-20 transition-transform duration-300 group-hover:scale-150 group-hover:bg-primary shadow-[0_0_15px_rgba(var(--primary),0.5)]" />
 
       <div className="hidden md:block w-[45%]" />
     </motion.div>

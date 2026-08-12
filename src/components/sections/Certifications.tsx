@@ -10,7 +10,7 @@ const allCredentials = [
     title: "Generative AI: Prompt Engineering",
     issuer: "IBM",
     date: "2024",
-    icon: <Cpu className="w-8 h-8 text-blue-400" />,
+    icon: <Cpu className="w-8 h-8 text-accent-blue" />,
     skillsGained: ["Prompt Design", "LLM Context Windows", "AI Workflows"]
   },
   {
@@ -18,7 +18,7 @@ const allCredentials = [
     title: "Data Analytics on AWS",
     issuer: "AWS",
     date: "2023",
-    icon: <Cloud className="w-8 h-8 text-amber-500" />,
+    icon: <Cloud className="w-8 h-8 text-accent-amber" />,
     skillsGained: ["Data Pipelines", "Cloud Architecture", "AWS Services"]
   },
   {
@@ -26,7 +26,7 @@ const allCredentials = [
     title: "Introduction to Networking",
     issuer: "NVIDIA",
     date: "2023",
-    icon: <NetworkIcon className="w-8 h-8 text-green-500" />,
+    icon: <NetworkIcon className="w-8 h-8 text-status-success" />,
     skillsGained: ["Network Topology", "Protocols", "Edge Computing"]
   },
   {
@@ -34,7 +34,7 @@ const allCredentials = [
     title: "Java (Basic)",
     issuer: "HackerRank",
     date: "2022",
-    icon: <Code className="w-8 h-8 text-green-400" />,
+    icon: <Code className="w-8 h-8 text-status-success" />,
     skillsGained: ["OOP", "Data Structures", "Algorithms"]
   },
   {
@@ -42,7 +42,7 @@ const allCredentials = [
     title: "GenAI Simulation",
     issuer: "Tata",
     date: "2024",
-    icon: <Briefcase className="w-8 h-8 text-purple-400" />,
+    icon: <Briefcase className="w-8 h-8 text-accent-purple" />,
     skillsGained: ["Enterprise AI", "Solution Architecture"]
   },
   {
@@ -50,7 +50,7 @@ const allCredentials = [
     title: "Software Engineering",
     issuer: "British Airways",
     date: "2024",
-    icon: <Briefcase className="w-8 h-8 text-purple-400" />,
+    icon: <Briefcase className="w-8 h-8 text-accent-purple" />,
     skillsGained: ["Web Scraping", "Python", "Data Modeling"]
   },
   {
@@ -58,7 +58,7 @@ const allCredentials = [
     title: "Digital Engineering",
     issuer: "Siemens Mobility",
     date: "2024",
-    icon: <Briefcase className="w-8 h-8 text-purple-400" />,
+    icon: <Briefcase className="w-8 h-8 text-accent-purple" />,
     skillsGained: ["Agile", "Project Management", "IoT"]
   }
 ];
@@ -77,7 +77,7 @@ function NetworkIcon({ className }: { className?: string }) {
 
 export default function Certifications() {
   return (
-    <section className="w-full bg-[#080808] text-foreground py-24 md:py-32 relative border-t border-white/5">
+    <section className="w-full bg-background text-foreground py-24 md:py-32 relative border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         <div className="flex flex-col md:flex-row gap-8 md:gap-24">
@@ -102,7 +102,7 @@ export default function Certifications() {
                    viewport={{ once: true }}
                    key={cred.title + cred.issuer} 
                  >
-                   <TiltCard className="bg-[#111] p-8 rounded-3xl border border-white/5 hover:border-white/20 transition-all duration-500 group relative overflow-hidden flex flex-col h-[280px] w-full block">
+                   <TiltCard className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background bg-surface p-8 rounded-3xl border border-white/5 hover:border-white/20 transition-all duration-500 group relative overflow-hidden flex flex-col h-[280px] w-full block">
                      <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-500"></div>
                      
                      <div className="flex justify-between items-start mb-auto">

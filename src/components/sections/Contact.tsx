@@ -44,7 +44,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="w-full bg-[#0B0B0B] text-foreground pt-16 pb-8 md:pt-48 md:pb-12 relative border-t border-white/5 overflow-hidden flex flex-col items-center">
+    <section className="w-full bg-background text-foreground pt-16 pb-8 md:pt-48 md:pb-12 relative border-t border-white/5 overflow-hidden flex flex-col items-center">
       {/* Background elegant gradient */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary/10 blur-[200px] rounded-[100%] pointer-events-none translate-y-1/2" />
 
@@ -79,7 +79,7 @@ export default function Contact() {
                   href={link.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex items-center justify-between px-8 py-6 rounded-full border border-white/10 bg-[#111] hover:bg-[#1A1A1A] hover:border-white/20 transition-all duration-300 w-full md:w-auto"
+                  className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background group flex items-center justify-between px-8 py-6 rounded-full border border-white/10 bg-surface hover:bg-surface hover:border-white/20 transition-all duration-300 w-full md:w-auto"
                 >
                   <div className="flex items-center gap-4 text-white">
                     <div className="p-2 rounded-full bg-white/5 group-hover:bg-primary/20 group-hover:text-primary transition-colors">
@@ -120,8 +120,8 @@ export default function Contact() {
           <span className="hidden md:inline text-white/20">•</span>
           <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-status-success opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-status-success"></span>
             </span>
             <span>Open to internships — Summer 2026</span>
           </div>
@@ -130,7 +130,7 @@ export default function Contact() {
         <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-sm text-muted-foreground font-light">
           <span>Lucknow, India (GMT +5:30)</span>
           <span className="hidden md:inline text-white/20">•</span>
-          <button onClick={scrollToTop} className="hover:text-white transition-colors flex items-center gap-1">
+          <button onClick={scrollToTop} className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background hover:text-white transition-colors flex items-center gap-1">
             Back to top <ArrowUpRight className="w-3 h-3 -rotate-45" />
           </button>
         </div>

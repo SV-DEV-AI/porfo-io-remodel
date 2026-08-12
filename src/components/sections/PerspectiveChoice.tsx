@@ -10,7 +10,7 @@ const perspectives = [
     title: "Developer",
     subtitle: "Code, Architecture, Engineering",
     icon: <Code2 className="w-12 h-12 md:w-16 md:h-16 mb-6 text-white" />,
-    color: "from-blue-500/20 to-blue-900/20",
+    color: "from-accent-blue/20 to-blue-900/20",
     content: "I engineer robust, scalable systems using modern architectures. From decoupling frontends with Next.js 15 to designing highly normalized MySQL databases, I treat code as craft. Performance, type-safety, and maintainability are not afterthoughts—they are the foundation.",
     points: ["Next.js App Router", "TypeScript Strict Mode", "Tailwind Architecture"]
   },
@@ -19,7 +19,7 @@ const perspectives = [
     title: "AI Builder",
     subtitle: "Workflows, Automation, Agents",
     icon: <BrainCircuit className="w-12 h-12 md:w-16 md:h-16 mb-6 text-white" />,
-    color: "from-purple-500/20 to-purple-900/20",
+    color: "from-accent-purple/20 to-purple-900/20",
     content: "I connect the dots between raw intelligence and user utility. Building an AI wrapper is easy; orchestrating seamless, stateful agents via n8n and webhooks is where the magic happens. I build systems that automate the mundane and augment human capability.",
     points: ["LLM Orchestration", "n8n Webhooks", "Telegram Bot API"]
   },
@@ -28,7 +28,7 @@ const perspectives = [
     title: "Entrepreneur",
     subtitle: "Products, Impact, Problem Solving",
     icon: <Lightbulb className="w-12 h-12 md:w-16 md:h-16 mb-6 text-white" />,
-    color: "from-amber-500/20 to-amber-900/20",
+    color: "from-accent-amber/20 to-amber-900/20",
     content: "Technology without impact is just syntax. I build products to solve real problems. Shineora was born from a need for better e-commerce UX; Elize was built to democratize academic support. I focus on user retention, scalable business logic, and frictionless onboarding.",
     points: ["Product Management", "UX Engineering", "Business Logic"]
   }
@@ -51,7 +51,7 @@ export default function PerspectiveChoice() {
               layoutId={`card-container-${item.id}`}
               key={item.id}
               onClick={() => setSelectedId(item.id)}
-              className="bg-[#111] hover:bg-[#151515] border border-white/5 hover:border-white/20 rounded-[2rem] p-8 md:p-10 cursor-pointer transition-colors group flex flex-col items-center text-center relative overflow-hidden h-[320px] md:h-[450px]"
+              className="bg-surface hover:bg-surface-elevated border border-white/5 hover:border-white/20 rounded-3xl p-8 md:p-10 cursor-pointer transition-colors group flex flex-col items-center text-center relative overflow-hidden h-[320px] md:h-[450px]"
             >
               <div className={`absolute inset-0 bg-gradient-to-b ${item.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
               
@@ -85,7 +85,7 @@ export default function PerspectiveChoice() {
                 <motion.div
                   layoutId={`card-container-${item.id}`}
                   key={item.id}
-                  className="bg-[#111] border border-white/10 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2rem] md:rounded-[3rem] p-8 md:p-12 relative flex flex-col shadow-2xl"
+                  className="bg-surface border border-white/10 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl md:rounded-4xl p-8 md:p-12 relative flex flex-col shadow-2xl"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <button 

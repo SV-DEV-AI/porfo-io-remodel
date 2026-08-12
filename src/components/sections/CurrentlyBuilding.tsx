@@ -11,7 +11,7 @@ const currentFocus = [
 
 export default function CurrentlyBuilding() {
   return (
-    <section className="w-full bg-[#111111] text-foreground py-24 relative overflow-hidden border-t border-border/10">
+    <section className="w-full bg-surface text-foreground py-24 relative overflow-hidden border-t border-border/10">
       
       {/* Background Pulse Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
@@ -25,7 +25,7 @@ export default function CurrentlyBuilding() {
                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                className="absolute inset-0 bg-primary/30 rounded-full"
              />
-             <div className="relative z-10 bg-[#111] p-3 rounded-full border border-primary/50 text-primary shadow-[0_0_15px_rgba(var(--primary),0.5)]">
+             <div className="relative z-10 bg-surface p-3 rounded-full border border-primary/50 text-primary shadow-[0_0_15px_rgba(var(--primary),0.5)]">
                <Activity className="w-5 h-5" />
              </div>
           </div>

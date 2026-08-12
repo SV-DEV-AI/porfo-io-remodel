@@ -6,11 +6,15 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-heading: var(--font-sans);
   
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-hover: var(--surface-hover);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -25,8 +29,14 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
+  --color-accent-blue: var(--accent-blue);
+  --color-status-success: var(--status-success);
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-amber: var(--accent-amber);
 
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
@@ -40,7 +50,11 @@
 :root {
   /* Luxury Dark Theme Default */
   --background: #0B0B0B;
+  --background-secondary: #050505;
   --foreground: #FFFFFF;
+  --surface: #111111;
+  --surface-elevated: #151515;
+  --surface-hover: #1A1A1A;
   --card: #111111;
   --card-foreground: #FFFFFF;
   --popover: #111111;
@@ -55,14 +69,22 @@
   --accent-foreground: #000000;
   --destructive: #7F1D1D;
   --border: #27272A;
+  --border-hover: #3F3F46;
   --input: #27272A;
   --ring: #D4AF37;
+  --accent-blue: #3B82F6;
+  --status-success: #22C55E;
+  --accent-purple: #A855F7;
+  --accent-amber: #F59E0B;
   --radius: 0.5rem;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
+  }
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
   }
   body {
     @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary;

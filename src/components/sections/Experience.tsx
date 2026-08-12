@@ -5,7 +5,7 @@ import { Briefcase, Calendar, ChevronRight } from "lucide-react";
 
 export default function Experience() {
   return (
-    <section className="w-full bg-[#050505] text-foreground py-24 md:py-32 relative overflow-hidden border-t border-white/5">
+    <section className="w-full bg-background text-foreground py-24 md:py-32 relative overflow-hidden border-t border-white/5">
       <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10">
         
         <div className="text-center mb-16">
@@ -19,7 +19,7 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="bg-[#111] border border-white/5 hover:border-white/20 p-8 md:p-12 rounded-[2rem] transition-colors relative overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)] group"
+          className="bg-surface border border-white/5 hover:border-white/20 p-8 md:p-12 rounded-3xl transition-colors relative overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)] group"
         >
           {/* Hover Glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
