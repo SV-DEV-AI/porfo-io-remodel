@@ -7,7 +7,7 @@ import TiltCard from "@/components/ui/TiltCard";
 const allCredentials = [
   {
     category: "AI",
-    title: "Generative AI: Prompt Engineering",
+    title: "Generative AI: Prompt Engineering Basics",
     issuer: "IBM",
     date: "2024",
     icon: <Cpu className="w-8 h-8 text-accent-blue" />,
@@ -15,7 +15,7 @@ const allCredentials = [
   },
   {
     category: "Cloud",
-    title: "Data Analytics on AWS",
+    title: "Getting Started with Data Analytics on AWS",
     issuer: "AWS",
     date: "2023",
     icon: <Cloud className="w-8 h-8 text-accent-amber" />,
@@ -28,38 +28,6 @@ const allCredentials = [
     date: "2023",
     icon: <NetworkIcon className="w-8 h-8 text-status-success" />,
     skillsGained: ["Network Topology", "Protocols", "Edge Computing"]
-  },
-  {
-    category: "Programming",
-    title: "Java (Basic)",
-    issuer: "HackerRank",
-    date: "2022",
-    icon: <Code className="w-8 h-8 text-status-success" />,
-    skillsGained: ["OOP", "Data Structures", "Algorithms"]
-  },
-  {
-    category: "Job Simulations",
-    title: "GenAI Simulation",
-    issuer: "Tata",
-    date: "2024",
-    icon: <Briefcase className="w-8 h-8 text-accent-purple" />,
-    skillsGained: ["Enterprise AI", "Solution Architecture"]
-  },
-  {
-    category: "Job Simulations",
-    title: "Software Engineering",
-    issuer: "British Airways",
-    date: "2024",
-    icon: <Briefcase className="w-8 h-8 text-accent-purple" />,
-    skillsGained: ["Web Scraping", "Python", "Data Modeling"]
-  },
-  {
-    category: "Job Simulations",
-    title: "Digital Engineering",
-    issuer: "Siemens Mobility",
-    date: "2024",
-    icon: <Briefcase className="w-8 h-8 text-accent-purple" />,
-    skillsGained: ["Agile", "Project Management", "IoT"]
   }
 ];
 

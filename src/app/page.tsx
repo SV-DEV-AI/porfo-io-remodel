@@ -1,7 +1,7 @@
 import Hero from "@/components/sections/Hero";
 import Experience from "@/components/sections/Experience";
 import StoryTimeline from "@/components/sections/StoryTimeline";
-import CaseStudyStudentPortal from "@/components/sections/CaseStudyStudentPortal";
+import CaseStudyMorphedStudios from "@/components/sections/CaseStudyMorphedStudios";
 import CaseStudyShineora from "@/components/sections/CaseStudyShineora";
 import CaseStudyElize from "@/components/sections/CaseStudyElize";
 import SkillsInteractive from "@/components/sections/SkillsInteractive";
@@ -17,7 +17,7 @@ export default function Home() {
       <Hero />
       <Experience />
       <StoryTimeline />
-      <CaseStudyStudentPortal />
+      <CaseStudyMorphedStudios />
       <CaseStudyShineora />
       <CaseStudyElize />
       <SkillsInteractive />

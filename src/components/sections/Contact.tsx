@@ -8,7 +8,7 @@ import MagneticButton from "@/components/ui/MagneticButton";
 const links = [
   {
     name: "Resume",
-    url: "https://sarthak.foo/Sarthak_Verma_Resume.pdf",
+    url: "/Sarthak_Verma_Resume.pdf",
     icon: <FileText className="w-5 h-5" />,
     handle: "View PDF"
   },

@@ -30,24 +30,23 @@ export default function Experience() {
                 <Briefcase className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-2xl font-semibold text-white tracking-tight mb-1">Junior Developer Intern</h3>
+                <h3 className="text-2xl font-semibold text-white tracking-tight mb-1">Web Development Intern</h3>
                 <h4 className="text-lg text-muted-foreground font-light">Shineora Arts and Jewels Pvt Ltd</h4>
               </div>
             </div>
             
             <div className="flex items-center gap-2 text-muted-foreground font-mono text-xs uppercase tracking-widest bg-white/5 px-4 py-2 rounded-full self-start">
               <Calendar className="w-4 h-4" />
-              <span>Internship</span>
+              <span>Nov 2025 – Jan 2026</span>
             </div>
           </div>
 
           <div className="space-y-4 relative z-10">
             {[
-              "Built production e-commerce solutions",
-              "Developed frontend experiences",
-              "Improved responsiveness",
-              "Worked with real business requirements",
-              "Collaborated on deployment workflows"
+              "Developed and maintained an e-commerce platform using modern web technologies.",
+              "Optimized frontend performance and mobile responsiveness, accelerating page load times.",
+              "Managed deployment workflows and content delivery, maintaining system reliability.",
+              "Collaborated cross-functionally to troubleshoot bugs, implement new features, and optimize SEO."
             ].map((task, i) => (
               <div key={i} className="flex items-start gap-3">
                 <ChevronRight className="w-5 h-5 text-primary shrink-0 mt-0.5" />

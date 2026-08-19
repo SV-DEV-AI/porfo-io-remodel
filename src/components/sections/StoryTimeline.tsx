@@ -13,7 +13,7 @@ const timelineData = [
     icon: <LayoutTemplate className="w-5 h-5" />,
     details: {
       lessons: "Mastered DOM manipulation, vanilla JS, and CSS layouts without relying on abstractions.",
-      milestone: "Built my first full-stack student portal.",
+      milestone: "Built my first responsive client portfolio for Morphed Studios.",
       achievement: "Developed a core problem-solving mindset."
     },
     linkText: "See the Fundamentals"

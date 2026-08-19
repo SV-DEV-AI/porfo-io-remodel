@@ -6,62 +6,62 @@ import { ChevronDown, Code2, Database, BrainCircuit, Workflow, Rocket } from "lu
 
 const skillsData = [
   {
+    id: "languages",
+    title: "Programming Languages",
+    icon: <Code2 className="w-6 h-6 md:w-8 md:h-8" />,
+    description: "Core languages for building robust software applications.",
+    skills: [
+      { name: "Java", projects: [] },
+      { name: "JavaScript", projects: [] },
+      { name: "TypeScript", projects: ["Shineora", "Portfolio", "Elize"] },
+      { name: "SQL", projects: [] }
+    ]
+  },
+  {
     id: "frontend",
-    title: "Frontend Engineering",
+    title: "Frontend",
     icon: <Code2 className="w-6 h-6 md:w-8 md:h-8" />,
     description: "Crafting pixel-perfect, responsive, and highly animated user interfaces.",
     skills: [
+      { name: "React.js", projects: ["Shineora", "Portfolio"] },
       { name: "Next.js", projects: ["Shineora", "Portfolio"] },
-      { name: "React", projects: ["Shineora", "Student Portal"] },
-      { name: "TypeScript", projects: ["Shineora", "Portfolio", "Elize"] },
-      { name: "Tailwind CSS", projects: ["Shineora", "Portfolio"] },
-      { name: "Framer Motion", projects: ["Portfolio", "Shineora"] }
+      { name: "HTML5", projects: ["Portfolio"] },
+      { name: "CSS3", projects: [] },
+      { name: "Tailwind CSS", projects: ["Shineora", "Portfolio"] }
     ]
   },
   {
     id: "backend",
-    title: "Backend Architecture",
+    title: "Backend & Databases",
     icon: <Database className="w-6 h-6 md:w-8 md:h-8" />,
     description: "Building scalable APIs and managing robust data architectures.",
     skills: [
-      { name: "Node.js", projects: ["Elize"] },
-      { name: "Firebase", projects: ["Client Projects"] },
-      { name: "MySQL", projects: ["Student Management System"] },
+      { name: "Firebase", projects: ["Shineora"] },
+      { name: "Firestore", projects: ["Shineora"] },
       { name: "REST APIs", projects: ["Shineora", "Elize"] }
     ]
   },
   {
     id: "ai",
-    title: "AI Integration",
+    title: "AI & Automation",
     icon: <BrainCircuit className="w-6 h-6 md:w-8 md:h-8" />,
     description: "Integrating intelligent capabilities into applications through advanced models.",
     skills: [
+      { name: "Generative AI", projects: ["Elize"] },
       { name: "Prompt Engineering", projects: ["Elize"] },
-      { name: "LLM Orchestration", projects: ["Elize"] },
-      { name: "OpenAI API", projects: ["Elize"] }
-    ]
-  },
-  {
-    id: "automation",
-    title: "Workflow Automation",
-    icon: <Workflow className="w-6 h-6 md:w-8 md:h-8" />,
-    description: "Orchestrating complex business logic and third-party integrations.",
-    skills: [
-      { name: "n8n", projects: ["Elize"] },
-      { name: "Webhooks", projects: ["Elize"] },
-      { name: "Telegram Bot API", projects: ["Elize"] }
+      { name: "n8n", projects: ["Elize"] }
     ]
   },
   {
     id: "deployment",
-    title: "Cloud & Deployment",
+    title: "Tools & Deployment",
     icon: <Rocket className="w-6 h-6 md:w-8 md:h-8" />,
     description: "Ensuring applications are delivered securely, reliably, and globally.",
     skills: [
-      { name: "Vercel Edge", projects: ["Shineora", "Portfolio"] },
-      { name: "AWS", projects: ["Data Analytics Simulations"] },
-      { name: "Hostinger", projects: ["Various Web Apps"] },
-      { name: "CI/CD", projects: ["Shineora", "Portfolio"] }
+      { name: "Git", projects: [] },
+      { name: "GitHub", projects: [] },
+      { name: "Vercel", projects: ["Shineora", "Portfolio"] },
+      { name: "Postman", projects: [] }
     ]
   }
 ];
